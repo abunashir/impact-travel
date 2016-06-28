@@ -1,5 +1,10 @@
 # Impact Travel
 
+[![Build
+Status](https://travis-ci.org/impactservices/impact-travel.svg?branch=master)](https://travis-ci.org/impactservices/impact-travel)
+[![Code
+Climate](https://codeclimate.com/github/impactservices/impact-travel/badges/gpa.svg)](https://codeclimate.com/github/impactservices/impact-travel)
+
 ## Installation
 
 Add this line to your application's Gemfile:

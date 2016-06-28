@@ -1,0 +1,8 @@
+cache: bundler
+
+language: ruby
+rvm:
+  - 2.3.0
+
+install:
+  - "bin/setup"

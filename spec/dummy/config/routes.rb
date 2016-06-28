@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount ImpactTravel::Engine => "/impact_travel"
+  mount ImpactTravel::Engine => "/"
 end
