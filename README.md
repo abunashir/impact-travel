@@ -19,6 +19,18 @@ And then execute:
 $ bundle install
 ```
 
+## Configure
+
+Impact Travel Engine provides you an easier way to configure it's underlying
+dependencies. Once you have the required credentials then you can add an
+initializer to set up your configuration.
+
+```ruby
+ImpactTravel.configure do |config|
+  config.api_key = "DISOUNT_NETWORK_API_KEY"
+end
+```
+
 ## Development
 
 We are following Sandi Metz's Rules for this application, you can read the

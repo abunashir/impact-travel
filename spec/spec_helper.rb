@@ -18,3 +18,8 @@ RSpec.configure do |config|
   config.order = :random
   config.use_transactional_fixtures = true
 end
+
+def restore_configuration_to_default
+  ImpactTravel.configuration = nil
+  ImpactTravel.configure {}
+end
