@@ -13,3 +13,6 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem "simple_form", "~> 3.2.1"
+gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "21f957a"
+gem "factory_girl"
