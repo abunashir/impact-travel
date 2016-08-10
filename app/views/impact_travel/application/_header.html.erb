@@ -1,0 +1,42 @@
+<header id="header" class="header-v1">
+  <!-- Main Nav -->
+  <nav class="flat-mega-menu">
+    <!-- flat-mega-menu class -->
+    <label for="mobile-button"> <i class="fa fa-bars"></i></label><!-- mobile click button to show menu -->
+    <input id="mobile-button" type="checkbox">
+
+    <ul class="collapse">
+      <li class="title">
+        <%= link_to(
+          image_tag("https://www.cdn.travel/assets/cdn/logo-07d54bbfaf092e31f37bb862c0b4539a3508efd9ebf56a19f965cdcd18e6c302.png", class: "navbar_logo"), "#") %>
+    </li>
+
+    <!-- site navigation -->
+    <!-- Include the navigation helper -->
+    <!-- site navigation -->
+
+    <% if logged_in? %>
+      <li class="login-form">
+        <%= link_to(
+          font_awesome("sign-out") , sessions_path, method: :delete, id: "logout"
+        ) %>
+      </li>
+
+      <li class="search-bar">
+        <%= link_to(
+          font_awesome("user"),
+          "#",
+          title: "My Account",
+          id: "my_account"
+        ) %>
+      </li>
+    <% else %>
+      <li class="search-bar">
+        <%= link_to(
+          font_awesome("sign-in"), new_session_path, title: "Login"
+        ) %>
+      </li>
+    <% end %>
+    </ul> </nav>
+    <!-- Main Nav -->
+</header>

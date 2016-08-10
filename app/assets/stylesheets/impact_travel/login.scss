@@ -1,0 +1,88 @@
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700");
+
+body {
+  background: url("https://s26.postimg.org/fb4oarn3d/happiness_68db22dacbb0df03e9feb39af6ded236b01deb.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::before {
+  z-index: -1;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* grenish desgin */
+  /* background: #2ecc71; */
+
+  /* IE Fallback */
+  /* background: rgba(46, 204, 113, 0.8); */
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 400px;
+  margin: -140px 0 0 -182px;
+  padding: 40px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.form input {
+  outline: none;
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  color: #000;
+  font-family: "Roboto";
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-wieght: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.form input[type="submit"]{
+  color: #fff;
+  border: 0px;
+}
+
+div.field_with_errors span.error{
+  display: none;
+}
+
+div.field_with_errors input{
+  border: 1px solid #e1483f;
+}
+
+.alert-info{
+  background-image: none;
+}
+
+.alert.alert-info{
+  border: 0px;
+  padding: 10px;
+  border-radius: 0;
+}
+p.custom_link{
+  margin-bottom: 0px;
+}

@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ImpactTravel</title>
-  <%= stylesheet_link_tag    "impact_travel/application", media: "all" %>
-  <%= javascript_include_tag "impact_travel/application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <title>Impact Travel</title>
+    <meta name="keywords" content="#" />
+    <meta name="description" content="#">
+    <meta name="author" content="#">
 
-<%= yield %>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "impact_travel/application" %>
 
-</body>
+    <!-- Favicons -->
+
+    <!--[if IE]>
+      <link rel="stylesheet" href="css/ie/ie.css">
+    <![endif]-->
+
+    <!--[if lte IE 8]>
+      <script src="js/responsive/html5shiv.js"></script>
+      <script src="js/responsive/respond.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="status">&nbsp;</div>
+    </div>
+
+    <div id="layout">
+      <%= render "header" %>
+      <%= yield %>
+      <%= render "footer" %>
+    </div>
+
+    <%= javascript_include_tag "impact_travel/application" %>
+  </body>
 </html>

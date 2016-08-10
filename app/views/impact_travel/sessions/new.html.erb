@@ -1,5 +1,15 @@
-<%= simple_form_for :login, url: sessions_path do |form| %>
-  <%= form.input :name %>
-  <%= form.input :password %>
-  <%= form.submit %>
+<h3>Login to your account</h3>
+<% flash.each do |key, msg| %>
+  <p class="alert alert-info"><%= msg %></p>
 <% end %>
+
+<%= simple_form_for :login, url: sessions_path do |form| %>
+  <%= form.input :name, label: false, placeholder: "Email or Username" %>
+  <%= form.input :password, label: false, placeholder: "Password" %>
+  <%= form.button :submit, "Login", class: "btn btn-primary animated" %>
+
+  <p class="custom_link">
+  <%= link_to "Forget your password?", "#" %>
+  </p>
+<% end %>
+</div>

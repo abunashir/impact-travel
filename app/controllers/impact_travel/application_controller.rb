@@ -1,6 +1,7 @@
 module ImpactTravel
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    helper_method :logged_in?
 
     def require_login
       unless logged_in?
@@ -11,8 +12,6 @@ module ImpactTravel
     def sign_in(user)
       session[:auth_token] = user.token
     end
-
-    private
 
     def logged_in?
       session[:auth_token].present?

@@ -1,7 +1,7 @@
 # Impact Travel
 
 [![Build
-Status](https://travis-ci.org/impactservices/impact-travel.svg?branch=master)](https://travis-ci.org/impactservices/impact-travel)
+Status](https://travis-ci.org/abunashir/impact-travel.svg?branch=master)](https://travis-ci.org/abunashir/impact-travel)
 [![Code
 Climate](https://codeclimate.com/github/impactservices/impact-travel/badges/gpa.svg)](https://codeclimate.com/github/impactservices/impact-travel)
 

@@ -7,5 +7,9 @@ module ImpactTravel
         dn_config.api_key = ImpactTravel.configuration.api_key
       end
     end
+
+    initializer "impact_travel.assets.precompile" do |app|
+      app.config.assets.precompile += %w(vendor/assets/**/**)
+    end
   end
 end

@@ -1,0 +1,256 @@
+img.navbar_logo{
+  margin-top: 10px;
+  height: 43px;
+  width: 125px;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+img.navbar_logo.logo_sticky{
+  display: none;
+}
+
+.title-header h1{
+  text-transform: uppercase;
+}
+
+footer.footer-v3{
+  background: none;
+}
+
+.footer-v3 .footer-down{
+  margin-top: 20px;
+}
+
+.flat-mega-menu ul .login-form {
+  min-width: 35px;
+}
+.flat-mega-menu ul .login-form a, .flat-mega-menu ul .search-bar a{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.filter-header .new_search input{
+  border-right: 1px solid #dedede;
+}
+
+.filter-header .new_search input[type="submit"]{
+  border-right: 0;
+}
+
+div.hotel_image_thumb img{
+  height: 200px;
+  width: 100%;
+}
+
+/* height issue on grid based hotel results */
+div.results_grid_box{
+  min-height: 522px;
+}
+/*  */
+/* .info-gallery p.hotel_address{ */
+/*   min-height: 80px; */
+/* } */
+
+/* overright bootstrap pagination */
+
+.pagination > a,
+.pagination > span,
+.pagination em.current {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination span.previous_page,
+.pagination a.previous_page{
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination span.next_page,
+.pagination a.next_page
+{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination > a:hover,
+.pagination > span:hover,
+.pagination > a:focus,
+.pagination > span:focus {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination em.current{
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+/* single hotel page */
+div.height_zero{
+  height: 0px;
+}
+
+p.hotel_description{
+  text-align: justify;
+}
+
+/* Booking page */
+div.form_holder{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.form_holder textarea.text_input{
+  height: 100px;
+  /* margin-bottom: 25px; */
+}
+
+.form_holder select{
+  width: 100%;
+  /* margin-bottom: 25px; */
+}
+
+table.confirmation_table{
+  width: 80%;
+}
+
+p.upcase{
+  text-transform: uppercase;
+}
+
+/* travelia form style */
+
+.travelia_form{
+  margin: 10px auto;
+}
+
+.travelia_form div.input{
+  margin-bottom: 20px;
+}
+
+.travelia_form input{
+  height: 36px;
+  border-radius: 0;
+  width: 100%;
+  border:solid 1px #dedede;
+  padding:5px 10px;
+}
+
+.travelia_form label{
+  font-weight: normal;
+}
+
+.travelia_form textarea{
+  border-radius: 0;
+  width: 100%;
+  height: 150px;
+  border:solid 1px #dedede;
+  padding:10px;
+}
+.travelia_form .btn{
+  margin-top: 25px;
+  width: auto;
+  padding: 10px 20px;
+  height: auto;
+  border:0;
+}
+
+.travelia_form .radio_buttons span.radio{
+  display: inline;
+}
+
+.travelia_form .radio_buttons label.radio_buttons{
+  display: block;
+}
+
+.travelia_form .radio input{
+  height: auto;
+}
+
+.travelia_form .radio label{
+  padding-right: 15px;
+}
+
+.travelia_form .field_with_errors input{
+  border: 1px solid #E1483F;
+}
+
+.travelia_form span.error{
+  color: #E1483F;
+}
+
+/* travelia form style end */
+
+/* account_holder style */
+div.account_holder{
+  margin-top: 15px;
+}
+
+
+/* filter sidebar */
+input.custom_style{
+  height: 36px;
+  border-radius: 0;
+  width: 100%;
+  border: solid 1px #dedede;
+  padding: 5px 10px;
+}
+
+.sidebar_action .btn{
+  border: 0;
+  padding: 7px 10px;
+}
+
+/* providers page style */
+img.provider_image{
+  height: 200px;
+}
+
+/* styling content format */
+.uppercase{
+  text-transform: uppercase;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+
+/* about us page */
+.about_us p{
+  text-align: justify;
+}
+
+.hide_it{
+  display: none;
+}
+
+/* content_page layout */
+
+
+/* content_page layout */
+.content_page ul, .content_page ol, .content_page{
+  font-size: 0.875rem;
+}
+

@@ -1,5 +1,7 @@
 module ImpactTravel
   class SessionsController < ApplicationController
+    layout "impact_travel/login"
+
     def create
       if authenticated?
         sign_in(@login.subscriber)
