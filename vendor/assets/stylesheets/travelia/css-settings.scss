@@ -1460,52 +1460,197 @@ perspective: 1500px;
   -khtml-opacity: 0;
   opacity: 0;
 }
-.tp-leftarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_left.png) no-Repeat top left;	width:40px;	height:40px;   }
-.tp-rightarrow											{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_right.png) no-Repeat top left;	width:40px;	height:40px;   }
 
-
-.tp-leftarrow.round										{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/small_left.png) no-Repeat top left;	width:19px;	height:14px;  margin-right:0px; float:left; margin-top:0px;	}
-.tp-rightarrow.round									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/small_right.png) no-Repeat top left;	width:19px;	height:14px;  margin-right:0px; float:left;	margin-top:0px}
-
-
-.tp-leftarrow.round-old									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_left.png) no-Repeat top left;	width:26px;	height:26px;  margin-right:0px; float:left; margin-top:0px;	}
-.tp-rightarrow.round-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right.png) no-Repeat top left;	width:26px;	height:26px;  margin-right:0px; float:left;	margin-top:0px}
-
-
-.tp-leftarrow.navbar									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/small_left_boxed.png) no-Repeat top left;	width:20px;	height:15px;   float:left;	margin-right:6px; margin-top:12px}
-.tp-rightarrow.navbar									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/small_right_boxed.png) no-Repeat top left;	width:20px;	height:15px;   float:left;	margin-left:6px; margin-top:12px}
-
-
-.tp-leftarrow.navbar-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrowleft.png) no-Repeat top left;		width:9px;	height:16px;   float:left;	margin-right:6px; margin-top:10px}
-.tp-rightarrow.navbar-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrowright.png) no-Repeat top left;	width:9px;	height:16px;   float:left;	margin-left:6px; margin-top:10px}
-
-.tp-leftarrow.navbar-old.thumbswitharrow				{	margin-right:10px}
-.tp-rightarrow.navbar-old.thumbswitharrow				{	margin-left:0px}
-
-.tp-leftarrow.square									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_left2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-right:0px; margin-top:0px}
-.tp-rightarrow.square									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:0px}
-
-
-.tp-leftarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_left2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-right:0px; margin-top:0px}
-.tp-rightarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:0px}
-
-
-.tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_left.png) no-Repeat 0 0;	width:40px;	height:40px;
-
-}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_right.png) no-Repeat 0 0;	width:40px;	height:40px;
-
+.tp-leftarrow{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/large_left.png") no-Repeat top left;
+  width: 40px;
+  height: 40px;
 }
 
+.tp-rightarrow{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/large_right.png") no-Repeat top left;
+  width: 40px;
+  height: 40px;
+}
 
+.tp-leftarrow.round{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/small_left.png") no-Repeat top left;
+  width: 19px;
+  height: 14px;
+  margin-right: 0px;
+  float: left;
+  margin-top: 0px;
+}
 
+.tp-rightarrow.round{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/small_right.png") no-Repeat top left;
+  width: 19px;
+  height: 14px;
+  margin-right: 0px;
+  float: left;
+  margin-top: 0px
+}
+
+.tp-leftarrow.round-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_left.png") no-Repeat top left;
+  width: 26px;
+  height: 26px;
+  margin-right: 0px;
+  float: left;
+  margin-top: 0px;
+}
+
+.tp-rightarrow.round-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_right.png") no-Repeat top left;
+  width: 26px;
+  height: 26px;
+  margin-right: 0px;
+  float: left;
+  margin-top: 0px
+}
+
+.tp-leftarrow.navbar{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/small_left_boxed.png") no-Repeat top left;
+  width: 20px;
+  height: 15px;
+  float: left;
+  margin-right: 6px;
+  margin-top: 12px
+}
+
+.tp-rightarrow.navbar{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/small_right_boxed.png") no-Repeat top left;
+  width: 20px;
+  height: 15px;
+  float: left;
+  margin-left: 6px;
+  margin-top: 12px;
+}
+
+.tp-leftarrow.navbar-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrowleft.png") no-Repeat top left;
+  width: 9px;
+  height: 16px;
+  float: left;
+  margin-right: 6px;
+  margin-top: 10px
+}
+
+.tp-rightarrow.navbar-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrowright.png") no-Repeat top left;
+  width: 9px;
+  height: 16px;
+  float: left;
+  margin-left: 6px;
+  margin-top: 10px;
+}
+
+.tp-leftarrow.navbar-old.thumbswitharrow{
+  margin-right:10px
+}
+
+.tp-rightarrow.navbar-old.thumbswitharrow{
+  margin-left:0px;
+}
+
+.tp-leftarrow.square{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_left2.png") no-Repeat top left;
+  width: 12px;
+  height: 17px;
+  float: left;
+  margin-right: 0px;
+  margin-top:0px;
+}
+
+.tp-rightarrow.square{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_right2.png") no-Repeat top left;
+  width: 12px;
+  height: 17px;
+  float: left;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+.tp-leftarrow.square-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_left2.png") no-Repeat top left;
+  width: 12px;
+  height: 17px;
+  float: left;
+  margin-right: 0px;
+  margin-top:0px;
+}
+
+.tp-rightarrow.square-old{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/arrow_right2.png") no-Repeat top left;
+  width: 12px;
+  height: 17px;
+  float: left;
+  margin-left: 0px;
+  margin-top:0px;
+}
+
+.tp-leftarrow.default{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/large_left.png") no-Repeat 0 0;
+  width: 40px;
+  height: 40px;
+}
+
+.tp-rightarrow.default{
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  background: asset-url("travelia/large_right.png") no-Repeat 0 0;
+  width: 40px;
+  height: 40px;
+}
 
 .tp-leftarrow:hover,
 .tp-rightarrow:hover 									{	background-position:bottom left}
-
-
-
-
 
 
 /****************************************************************************************************
@@ -2335,12 +2480,12 @@ position:relative;top:0px}
 
 
 @font-face {
-  font-family: 'revicons';
-  src: url('/fonts/revicons.eot?5510888');
-  src: url('/fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),
-  url('/fonts/revicons.woff?5510888') format('woff'),
-  url('/fonts/revicons.ttf?5510888') format('truetype'),
-  url('/fonts/revicons.svg?5510888#revicons') format('svg');
+  font-family: "revicons";
+  src: asset-url("travelia/revicons.eot");
+  src: asset-url("travelia/revicons.eot") format('embedded-opentype'),
+  asset-url("travelia/revicons.woff") format('woff'),
+  asset-url("travelia/revicons.ttf") format('truetype'),
+  asset-url("travelia/revicons.svg") format('svg');
   font-weight: normal;
   font-style: normal;
 }

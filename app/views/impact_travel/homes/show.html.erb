@@ -1,2 +1,343 @@
-<%= notice %>
-<%= link_to "Logout", sessions_path, method: :delete %>
+<% content = OpenStruct.new %>
+<!-- Slide And Filter Section-->
+<section class="tp-banner-container">
+  <!-- SLIDE  -->
+  <div class="tp-banner" >
+    <!-- SLIDES CONTENT-->
+    <ul>
+
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <!-- MAIN IMAGE -->
+        <img src="<%= asset_path "#{app_theme}/slide-1.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+        <!-- LAYERS -->
+      </li>
+
+      <!-- SLIDE  -->
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <!-- MAIN IMAGE -->
+        <img src="<%= asset_path "#{app_theme}/slide-2.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+        <!-- LAYERS -->
+      </li>
+
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <!-- MAIN IMAGE -->
+        <img src="<%= asset_path "#{app_theme}/slide-3.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+        <!-- LAYERS -->
+      </li>
+
+
+
+      <!-- SLIDE  -->
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <!-- MAIN IMAGE -->
+        <img src="<%= asset_path "#{app_theme}/slide-4.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+        <!-- LAYERS -->
+      </li>
+
+      <!-- SLIDE  -->
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <!-- MAIN IMAGE -->
+        <img src="<%= asset_path("#{app_theme}/slide-6.jpg")  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+        <!-- LAYERS -->
+      </li>
+    </ul> 
+    <!-- END SLIDES  -->
+    <div class="tp-bannertimer"></div>
+  </div>
+  <!-- SLIDE CONTENT-->
+
+  <!-- FILTER HEADER - TITLE HEADER-->
+  <div class="filter-title">
+    <!-- TITLE HEADER-->
+    <div class="title-header">
+      <h1><%= content.hero_title %></h1>
+      <p class="lead"><%= content.hero_html %></p>
+    </div>
+    <!-- END TITLE HEADER-->
+
+    <!-- FILTER HEADER-->
+    <div class="filter-header">
+      <%= simple_form_for @search do |f| %>
+        <%= f.input :location_id, as: :hidden %>
+        <%= f.input :destination, placeholder: "Where do you want to go?",
+          label: false, input_html: {class: "input-large"} %>
+
+        <%= f.input :check_in, placeholder: "Check In", label: false,
+          input_html: {class: "date-input"} %>
+
+        <%= f.input :check_out, placeholder: "Check Out", label: false,
+          input_html: {class: "date-input"} %>
+
+        <div class="selector">
+          <%= f.input :guests, as: :select, collection: guests_collection,
+            prompt: false, label: false, selected: 2,
+            input_html: {class: "guests-input"} %>
+          <span class="custom-select">Guests</span>
+        </div>
+
+        <%= f.submit "Search" %>
+      <% end %>
+    </div>
+    <!-- END FILTER HEADER-->
+  </div>
+  <!-- END FILTERHEADER - TITLE HEADER -->
+</section>
+<!-- End Slide And Filter Section-->
+
+<!--Content Central -->
+<section class="content-central">
+  <!-- Shadow Semiboxed Layout -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/shp.png", class: 'img-responsive' %>
+  </div>
+  <!-- End Shadow Semiboxed Layout -->
+
+  <!-- End content info - Vacations Destinatios-->
+  <div class="content_info">
+    <div class="content_resalt">
+      <div class="container">
+        <div class="row">
+          <!-- Info Resalt - Info Services -->
+          <div class="col-md-4 ">
+            <div class="services-lines-info">
+              <h2><%= content.welcome_title %></h2>
+              <p class="lead">
+              <%= content.welcome_sub %>
+              <span class="line"></span>
+              </p>
+              <p><%= content.welcome_html %></p>
+            </div>
+          </div>
+          <!-- End Info Resalt - Info Services --> 
+
+          <!-- Services Items -->
+          <div class="col-md-8">
+            <ul class="services-lines">
+              <li>
+                <%= link_to condos_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-home"></i>
+                    <h5>Condos</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to hotels_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-bed"></i>
+                    <h5>Hotels</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to cruises_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-ship"></i>
+                    <h5>Cruises</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to shopping_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-shopping-cart"></i>
+                    <h5>Shopping</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to cars_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-car"></i>
+                    <h5>Car Hire</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to tours_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-paper-plane"></i>
+                    <h5>Tours</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to packages_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-bank"></i>
+                    <h5>All-inclusive</h5>
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to wellnesses_path do %>
+                  <div class="item-service-line">
+                    <i class="fa fa-heartbeat"></i>
+                    <h5>Wellness</h5>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          </div> 
+          <!-- End Services Items --> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End content info - Vacations Destinatios--> 
+
+  <!-- content info - contact support -->
+  <%= render "contact_info" %>
+  <!-- content info - contact support end -->
+
+  <!-- End content info - Features-->
+  <div class="content_info">
+    <!-- Title -->
+    <div class="container">
+      <div class="row">
+        <div class="titles">
+          <h2>Why <span>Book</span> with <%= site_abbreviation %><span>?</span></h2> <i class="fa fa-plane"></i> <hr class="tall"> </div>
+      </div>
+    </div>
+    <!-- End Title-->
+
+    <!-- content-->
+    <div class="container">
+      <div class="row padding-bottom">
+        <div class="col-md-4">
+          <div class="item-feature text-center">
+            <div class="head-feature">
+              <span>thousands of</span>
+              <br>
+              <div class="title-feature">
+                <i class="fa fa-sun-o left-icon"></i>
+                <i class="fa fa-umbrella right-icon"></i>
+                hotels
+              </div><span> &</span>
+              <br>
+              <span>resorts</span>
+            </div>
+            <div class="info-feature">
+              <p>Be it major cities or the smallest villages, we can find inventory for you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="item-feature text-center">
+            <div class="head-feature">
+              <span>all major</span>
+              <br>
+              <div class="title-feature">
+                <i class="fa fa-thumbs-o-up left-icon"></i>
+                <i class="fa fa-heart right-icon"></i>
+                cruise
+              </div>
+              <br>
+              <span>lines</span>
+            </div>
+            <div class="info-feature">
+              <p>Pick a cruise online, ask our agents to book it with additional discounts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="item-feature text-center">
+            <div class="head-feature">
+              <span>the</span>
+              <br>
+              <div class="title-feature">
+                <i class="fa fa-check right-icon"></i>
+                lowest price
+              </div>
+              <br>
+              <span>guaranteed</span>
+            </div>
+            <div class="info-feature">
+              <p>Our guarantee allows you to focus on where to go, not how much is costs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End content-->
+  </div>   
+  <!-- End content info - Features--> 
+
+  <!-- content info - testimonials-->
+  <div class="content_info">
+    <!-- Parallax Background -->
+    <div class="bg_parallax image_02_parallax"></div>
+    <!-- Parallax Background -->
+
+    <div class="opacy_bg_02">
+      <!-- Testimonial Propertie-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="info-testimonial">
+              <ul id="testimonials">
+                <li>
+                  <p><i class="fa fa-quote-left"></i>The hotel is stunning, super recommended. And the treatment of its people in very good, are always attentive to the little things.<i class="fa fa-quote-right"></i></p>
+
+                  <div class="image-testimonials">
+                    <%= image_tag "#{app_theme}/experiences-1.jpg" %>
+                  </div>
+                  <h4>Jeniffer Martinez</h4>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </li>
+
+                <li>
+                  <p><i class="fa fa-quote-left"></i>
+                  Our trip to the Easter Island was amazing. It has always been our dream to go! 
+                  <i class="fa fa-quote-right"></i></p>
+
+                  <div class="image-testimonials">
+                    <%= image_tag "#{app_theme}/experiences-2.jpg" %>
+                  </div>
+                  <h4>Juan Rendon</h4>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                </li>
+
+                <li>
+                  <p><i class="fa fa-quote-left"></i>
+                  This was our first time on a cruise, what a fantastic way to holiday! We will be back again next year.<i class="fa fa-quote-right"></i></p>
+
+                  <div class="image-testimonials">
+                    <%= image_tag "#{app_theme}/experiences-3.jpg" %>
+                  </div>
+                  <h4>Allan and Jenny</h4>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="testimonial-info">
+              <h2>TESTIMONIALS</h2>
+              <p><%= raw content.testmonials_html %></p>
+              <!-- <a href="#" class="btn btn&#45;primary">View Details</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Testimonial Propertie-->
+    </div>
+  </div>
+  <!-- End content info - testimonials-->
+</section>
+<!-- End Content Central -->

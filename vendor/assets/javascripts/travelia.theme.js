@@ -1,5 +1,4 @@
 //= require travelia/modernizr
-//= require travelia/jquery
 //= require travelia/jquery-ui.1.10.4.min
 //= require travelia/jquery.sticky
 //= require travelia/jquery.ui.totop

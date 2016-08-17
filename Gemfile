@@ -16,5 +16,8 @@ gemspec
 gem "simple_form", "~> 3.2.1"
 gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "21f957a"
 gem "factory_girl"
+gem "jquery-rails"
 gem "sass-rails"
 gem "coffee-rails"
+gem "font-awesome-rails"
+gem "bootstrap-sass", "~> 3.3.7"

@@ -12,20 +12,23 @@
     </li>
 
     <!-- site navigation -->
-    <!-- Include the navigation helper -->
+    <%= render "navigation" %>
     <!-- site navigation -->
 
     <% if logged_in? %>
       <li class="login-form">
         <%= link_to(
-          font_awesome("sign-out") , sessions_path, method: :delete, id: "logout"
+          font_awesome("fa-sign-out"),
+          session_path(Time.now.to_i),
+          method: :delete,
+          id: "logout"
         ) %>
       </li>
 
       <li class="search-bar">
         <%= link_to(
-          font_awesome("user"),
-          "#",
+          font_awesome("fa-user"),
+          account_path,
           title: "My Account",
           id: "my_account"
         ) %>
@@ -33,7 +36,7 @@
     <% else %>
       <li class="search-bar">
         <%= link_to(
-          font_awesome("sign-in"), new_session_path, title: "Login"
+          font_awesome("fa-sign-in"), new_session_path, title: "Login"
         ) %>
       </li>
     <% end %>

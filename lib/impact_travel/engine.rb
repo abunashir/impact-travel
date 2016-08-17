@@ -9,6 +9,7 @@ module ImpactTravel
     end
 
     initializer "impact_travel.assets.precompile" do |app|
+      app.config.assets.precompile += %w(impact_travel/**)
       app.config.assets.precompile += %w(vendor/assets/**/**)
     end
   end

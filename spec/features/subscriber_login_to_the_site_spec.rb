@@ -12,8 +12,8 @@ feature "Subscriber login" do
     fill_in "login_password", with: subscriber.password
     click_on "Login"
 
-    expect(page).to have_content("Logout")
-    expect(page).to have_content("You are logged in")
+    expect(page).to have_link("Hotels")
+    expect(page).to have_selector("li.search-bar #my_account")
     expect(current_path).to eq(impact_travel.home_path)
   end
 end
