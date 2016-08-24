@@ -14,7 +14,17 @@ module ImpactTravel
     end
 
     def logged_in?
-      session[:auth_token].present?
+      user_auth_token.present?
+    end
+
+    private
+
+    def user_auth_token
+      @user_auth_token ||= session[:auth_token]
+    end
+
+    def set_auth_token
+      DiscountNetwork.configuration.auth_token = user_auth_token
     end
   end
 end

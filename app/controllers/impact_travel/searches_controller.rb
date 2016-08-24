@@ -1,6 +1,7 @@
 module ImpactTravel
   class SearchesController < ApplicationController
     before_action :require_login
+    before_action :set_auth_token
 
     def show
     end
