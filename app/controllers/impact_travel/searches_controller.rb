@@ -4,6 +4,7 @@ module ImpactTravel
     before_action :set_auth_token
 
     def show
+      @search = Search.find(params[:id])
     end
 
     def create

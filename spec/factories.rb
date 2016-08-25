@@ -5,6 +5,7 @@ FactoryGirl.define do
   end
 
   factory :search, class: ImpactTravel::Search do
+    search_id 112_99
     location_id "835"
     destination "Bangkok, Thailand"
     check_in "25/08/2016"

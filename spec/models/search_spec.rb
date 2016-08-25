@@ -11,4 +11,15 @@ describe ImpactTravel::Search do
       expect(search.response.search.location).to eq(search.destination)
     end
   end
+
+  describe ".find" do
+    it "retrieves the search" do
+      search_id = "DN_SEARCH_101"
+      stub_search_find_api(search_id)
+      search = ImpactTravel::Search.find(search_id)
+
+      expect(search.id).to eq(search_id)
+      expect(search.location).to eq("Bangkok, Thailand")
+    end
+  end
 end

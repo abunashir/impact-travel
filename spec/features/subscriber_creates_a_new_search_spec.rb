@@ -4,7 +4,9 @@ feature "New Search" do
   scenario "subscriber creates a new search" do
     login_with_valid_credentials
     search = build(:search)
+
     stub_search_create_api(search.attributes)
+    stub_search_find_api(search.search_id)
 
     fill_in "search_destination", with: search.destination
     fill_in "search_check_in", with: search.check_in
@@ -16,8 +18,8 @@ feature "New Search" do
 
     click_on "Search"
 
-    expect(page).to have_content("Looking for hotels in ..")
-    expect(current_path).to match(/searches\/*\//)
+    expect(current_path).to eq(impact_travel.search_path(search.search_id))
+    expect(page).to have_content("Looking for hotels in Bangkok, Thailand")
   end
 
   def login_with_valid_credentials
