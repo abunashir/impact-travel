@@ -3,7 +3,11 @@ ImpactTravel::Engine.routes.draw do
   resources :sessions
   resource :home
   resources :destinations
-  resources :searches
+
+  resources :searches do
+    resources :results
+  end
+
   resources :condos
   resources :hotels
   resources :cruises

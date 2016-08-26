@@ -5,6 +5,7 @@ module ImpactTravel
 
     def show
       @search = Search.find(params[:id])
+      render layout: "impact_travel/loading"
     end
 
     def create

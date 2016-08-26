@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html class="full">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <title>Impact Travel</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag "impact_travel/loading" %>
+  </head>
+
+  <body class="full">
+    <div class="global-wrap">
+
+      <div class="full-page">
+        <div class="bg-holder full">
+          <div class="bg-mask"></div>
+          <div class="bg-img" style="background-image:url(<%= asset_path "impact_travel/happiness.jpg"%>);"></div>
+          <div class="bg-holder-content full text-white text-center">
+            <div class="full-center">
+              <div class="container">
+                <div class="spinner-clock">
+                  <div class="spinner-clock-hour"></div>
+                  <div class="spinner-clock-minute"></div>
+                </div>
+
+                <div class="main-content">
+                  <%= yield %>
+                </div>
+
+                <!-- <p class="text&#45;bigger">
+                  it will take a couple of seconds</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_tag do %>
+      setTimeout(function(){
+      window.location.href = "<%= search_results_path(@search.id) %>";
+      }, 12000);
+    <% end %>
+  </body>
+</html>
