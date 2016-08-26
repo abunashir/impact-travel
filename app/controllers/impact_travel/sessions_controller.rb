@@ -9,6 +9,11 @@ module ImpactTravel
       end
     end
 
+    def destroy
+      destroy_user_sessions
+      redirect_to(landing_path, notice: I18n.t("sessions.destroyed"))
+    end
+
     private
 
     def login
@@ -17,6 +22,10 @@ module ImpactTravel
 
     def authenticated?
       login.authenticate
+    end
+
+    def destroy_user_sessions
+      session[:auth_token] = nil
     end
 
     def login_params
