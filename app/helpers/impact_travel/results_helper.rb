@@ -13,19 +13,23 @@ module ImpactTravel
     end
 
     def show_property_type_checkboxes(name, number)
-      output  = "<div class='checkbox'><label>"
-      output += "<input type='checkbox' name='property_types[]'"
-      output += "value='#{number}' #{check_property_selection(number)} />"
-      output += "#{name}</label>"
-      raw output
+      raw build_filtering_options(
+        "property_types", name, number, check_property_selection(number)
+      )
     end
 
     def show_hotel_amenities(name, number)
+      raw build_filtering_options(
+        "amenities", name, number, check_amenities_selection(number)
+      )
+    end
+
+    def build_filtering_options(option_type, name, number, selection_status)
       output  = "<div class='checkbox'><label>"
-      output += "<input type='checkbox' name='amenities[]' "
-      output += "value='#{number}' #{check_amenities_selection(number)} />"
+      output += "<input type='checkbox' name='#{option_type}[]' "
+      output += "value='#{number}' #{selection_status} />"
       output += "#{name}</label>"
-      raw output
+      output
     end
 
     def check_selection(field, num)
