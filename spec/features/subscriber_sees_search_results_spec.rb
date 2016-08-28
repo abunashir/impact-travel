@@ -6,6 +6,9 @@ feature "Search results" do
     login_with_valid_credentials
     stub_search_results_api(search_id: search_id)
     visit impact_travel.search_results_path(search_id)
+
+    expect(page).to have_content("Nasa Vegas Hotel")
+    expect(page).to have_content("Refine your results")
   end
 
   def login_with_valid_credentials

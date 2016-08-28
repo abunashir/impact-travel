@@ -1,0 +1,227 @@
+<%-
+  results = @results
+  search = results.search
+  hotels = results.hotels
+  total_count = results.filtered_count || result.total_count
+%>
+
+<!-- Section Title-->
+<div class="section-title-01">
+  <!-- Parallax Background -->
+  <div class="bg_parallax image_05_parallax"></div>
+  <!-- Parallax Background -->
+
+  <!-- Content Parallax-->
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1><%= search.location %></h1>
+      <div class="crumbs">
+        <ul>
+          <li><%= search.check_in %> - <%= search.check_out %></li>
+          <li>/</li>
+          <li><%= search.adults %> Adults</li>  
+          <li>/</li>
+          <li><%= search.children %> Children</li>  
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Content Parallax--> 
+</div>
+<!-- End Section Title-->
+
+<!--Content Central -->
+<div class="content-central">
+  <!-- Shadow Semiboxed -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+  <!-- End Shadow Semiboxed -->
+
+  <!-- End content info - page Fill with -->
+  <div class="content_info">
+    <div class="container">
+      <div class="row">
+        <!-- Left Sidebar-->
+        <div class="col-md-3">
+          <div class="container-by-widget-filter bg-dark color-white">
+            <form method="get" action="" id="results_filter" />
+
+            <!-- Widget Filter Price Range-->
+            <aside class="widget padding-top-mini">
+              <h3 class="title-widget">Refine your results</h3>
+              <h4>Hotel name</h4>
+              <input type="text" name="property_name" placeholder="Hotel Name"
+                        value="<%= params[:property_name]  %>" class="custom_style"/>
+            </aside>
+
+            <!-- Widget Filter Stars-->
+            <aside class="widget">
+              <h4>Star Rating</h4>
+              <% (1..5).each do |number| %>
+                <%= show_star_filtering(number) %>
+                <% end %>
+           </aside>
+            <!-- End Widget Filter Stars-->
+
+            <!-- Widget Filter Radio -->
+            <aside class="widget">
+              <h4>Acomodation type </h4>
+              <%= show_property_type_checkboxes("Hotel", 1) %>
+              <%= show_property_type_checkboxes("Hostel", 2) %>
+              <%= show_property_type_checkboxes("Bed & Breakfast", 3) %>
+              <%= show_property_type_checkboxes("Apartment", 4) %>
+              <%= show_property_type_checkboxes("Resort", 5) %>
+              <%= show_property_type_checkboxes("Villa", 6) %>
+              <%= show_property_type_checkboxes("Motel", 7) %>
+            </aside>
+            <!-- End Widget Filter Radio -->
+
+            <!-- Widget Filter checkbox -->
+            <aside class="widget">
+              <h4>Hotel Preferences</h4>
+              <%= show_hotel_amenities("Internet Access", 1) %>
+              <%= show_hotel_amenities("Swimming pool", 2) %>
+              <%= show_hotel_amenities("Parking", 3) %>
+              <%= show_hotel_amenities("Restaurant", 4) %>
+              <%= show_hotel_amenities("Fitness Centre / Spa", 5) %>
+            </aside>
+            <!-- End Widget Filter checkbox -->
+
+            <aside class="sidebar_action">
+              <input type="submit" value="Apply filter" class="btn btn-primary" />
+              <%= link_to "reset all", "#", id: "filter_form_reset",
+                class: "btn btn-success" %>
+            </aside>
+
+            </form>
+          </div>
+        </div>
+        <!-- End Left Sidebar-->
+
+        <!-- Grid Elements-->
+        <div class="col-md-9">
+          <!-- Title Results-->
+          <div class="title-results">
+            <h3>
+              We found <%= total_count  %> hotels and counting. Narrow
+              results or <%= link_to "view all", search_results_path(search.id) %>
+            </h3>
+          </div>
+          <!-- End Title Results-->
+
+          <!-- sort-by-container-->
+          <div class="sort-by-container tooltip-hover">
+            <div class="row">
+              <form action="" method="get" id="results_sort_from">
+                <input type="hidden" id="sort_param_name" name="sort" value="" />
+                <input type="hidden" id="sort_param_order" name="order" value="" />
+              <div class="col-md-12">
+                <strong>Sort by:</strong>
+                <ul>
+                  <li>
+                    <div class="selector">
+                      <select data-sort="popularity">
+                        <option disabled selected>Select an order</option>
+                        <option value="asc">Sort Ascending</option>
+                        <option value="desc">Sort Descending</option>
+                      </select>
+                      <span class="custom-select">Best Value</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="selector">
+                      <select data-sort="name">
+                        <option disabled selected>Select an order</option>
+                        <option value="asc">A To Z</option>
+                        <option value="desc">Z To A</option>
+                      </select>
+                      <span class="custom-select">Name</span>
+                    </div>
+                  </li>  
+
+                  <li>
+                    <div class="selector">
+                      <select data-sort="price">
+                        <option disabled selected>Select an order</option>
+                        <option value="asc">Sort Ascending</option>
+                        <option value="desc">Sort Descending</option>
+                      </select>
+                      <span class="custom-select">Price</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              </form>
+            </div>
+          </div>
+          <!-- sort-by-container-->
+
+          <!-- Item Gallery Grid View--> 
+          <div class="row">
+            <% if hotels.count > 0 %>
+              <% hotels.each do |hotel| %>
+                <!-- Item Gallery-->
+                <div class="col-xs-12 col-sm-6 col-md-4 results_grid_box">
+                  <div class="img-hover hotel_image_thumb">
+                    <%= image_tag hotel.image, class: "img-responsive" %>
+                    <div class="overlay">
+                      <a href="#"><i class="fa fa-plus-circle"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="info-gallery">
+                    <h3>
+                      <%= truncate(hotel.name, length: 25) %><br>
+                      <span><%= truncate(hotel.address, length: 35) %></span>
+                    </h3>
+                    <hr class="separator">
+                    <p class="hotel_address">
+                    <%= truncate(hotel.description, length: 120)  %>
+                    </p>
+                    <ul class="starts">
+                      <% score    = (hotel.review_score.to_f * 5)/100 %>
+                      <% fraction = score % 1  %>
+
+                      <% score.to_i.times do |num| %>
+                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <% end %>
+
+                      <% unless fraction == 0 %>
+                        <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
+                      <% end %>
+                    </ul>
+                    <div class="content-btn">
+                      <%= link_to "View Details", search_result_path(search.id,
+                          hotel.id), class: "btn btn-primary" %>
+                      <!-- <a href="#" class="btn btn&#45;primary">View Details</a> -->
+                    </div>
+                    <div class="price"><span>$</span><b>From</b>
+                      <%= number_to_currency(hotel.promo_price, unit: "") %></div>
+                  </div>
+                </div>
+                <!-- End Item Gallery-->
+              <% end %>
+            <% end %>
+          </div>
+          <!-- End Item Gallery Grid View--> 
+
+          <!-- pagination -->
+          <div class="hotel_results_pagination">
+            <%-
+              pages = (0..total_count).to_a.paginate(
+                page: results.current_page, per_page: results.per_page)
+              %>
+            <%= will_paginate pages %>
+          </div>
+          <!-- /pagination -->
+
+          <p> &nbsp; </p>
+        </div>
+        <!-- Grid Elements-->
+      </div>
+    </div>
+  </div>   
+  <!-- End content info - page Fill with  --> 
+</div>
+<!-- End Content Central -->
