@@ -5,7 +5,9 @@ ImpactTravel::Engine.routes.draw do
   resources :destinations
 
   resources :searches do
-    resources :results
+    resources :results do
+      resources :bookings
+    end
   end
 
   resources :condos

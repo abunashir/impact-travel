@@ -6,7 +6,9 @@ require "rspec/rails"
 require "discountnetwork/rspec"
 require "factory_girl"
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[ImpactTravel::Engine.root.join("spec/support/**/*.rb")].each do |file|
+  require file
+end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -17,6 +19,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.order = :random
   config.use_transactional_fixtures = true
+
+  # Feature Helpers
+  config.include Feature::AuthenticationHelpers
 end
 
 def restore_configuration_to_default

@@ -1,0 +1,60 @@
+<div class="accrodation">
+  <!-- section 1 -->
+  <span class="acc-trigger">
+    <a href="#">How do I make a booking?</a></span>
+  <div class="acc-container">
+    <div class="content">
+      Bookings are performed in a 2 step process, as the prices we give you
+      access to are agent prices, and hence one of our agents will need to make
+      the booking for you. Simply select the hotel and dates you would like to
+      stay, then provide one of our agents with your credit card details, and
+      they will process the booking for you. It is that simple. If you do not
+      have a specific hotel, you can also submit a general request, and then
+      our agents will research the place you would like to travel to, find hotel
+      options and give you some properties to choose from. This process takes
+      more time, as our agents will have to do more research. So the quickest
+      way is for you to select the place and dates, then have our agents simply
+      book it for you.
+    </div>
+  </div>
+
+  <!-- section 2 -->
+  <span class="acc-trigger"><a href="#">What is the check in/out time?</a></span>
+  <div class="acc-container">
+    <div class="content">
+      At this property check in time is at <%= hotel.check_in %> and
+      check out time is at <%= hotel.check_out %>.
+    </div>
+  </div>
+
+  <!-- section 3 -->
+  <span class="acc-trigger"><a href="#">What is the cancellation policy?</a></span>
+  <div class="acc-container">
+    <div class="content">
+      <% policy = hotel.cancellation_policy.first %>
+      <%= policy ? policy : "The cancellation policy for this property is not available from the service provider. Please ask your booking agent for details." %>
+    </div>
+  </div>
+
+  <!-- section 4 -->
+  <span class="acc-trigger active">
+    <a href="#">Are the prices displayed final prices? </a></span>
+  <div class="acc-container">
+    <div class="content">
+      When you enter a search, our system will search all available hotel
+      distributors and display the best online rate to you. When you make your
+      booking most of the time, the prices will be even lower than what you see
+      in the search result page.
+    </div>
+  </div>
+
+  <!-- section 5 -->
+  <span class="acc-trigger active">
+    <a href="#">How long does it take to receive the booking confirmation?</a></span>
+  <div class="acc-container">
+    <div class="content">
+      Once our agent has received your booking request and credit card details, all bookings will be processed and confirmed within 24 hours.
+    </div>
+  </div>
+
+</div> 

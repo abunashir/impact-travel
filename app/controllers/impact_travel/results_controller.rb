@@ -6,5 +6,11 @@ module ImpactTravel
     def index
       @results = Result.where(search_id: params[:search_id])
     end
+
+    def show
+      @result = Result.find_by(
+        search_id: params[:search_id], hotel_id: params[:id]
+      )
+    end
   end
 end

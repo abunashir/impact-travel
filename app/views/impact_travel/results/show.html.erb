@@ -1,0 +1,165 @@
+<%-
+  hotel     = @result
+  search    = @result.search
+  score     = (hotel.review_score.to_f * 5 ) / 100
+  fraction  = score % 1
+%>
+
+<!-- Section Title-->    
+<div class="section-title-detailed">
+  <!-- Single Carousel-->
+  <div id="single-carousel">
+    <% hotel.images.each do |image| %>
+      <div class="img-hover">
+        <% img = image.gsub('w_460', 'w_800').gsub('h_460', 'h_600') %>
+        <%= image_tag img, class: "img-responsive" %>
+      </div>
+    <% end %>
+  </div>
+  <!-- End Single Carousel-->
+
+  <!-- Section Title-->
+  <div class="title-detailed">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <ul class="starts">
+            <% score.to_i.times do |num| %>
+              <li><a href="#"><i class="fa fa-star"></i></a></li>
+            <% end %>
+
+            <% unless fraction == 0 %>
+              <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
+            <% end %>
+          </ul>
+          <h2><%= hotel.name  %>
+          <span><%= hotel.address %></span>
+          </h2>
+        </div>
+
+        <div class="col-md-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Section Title-->
+</div>   
+<!-- End Section Title-->
+
+<!--Content Central -->
+<div class="content-central">
+  <!-- Shadow Semiboxed -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+  <!-- End Shadow Semiboxed -->
+
+  <!-- End content info - Features-->
+  <div class="content_info skin_base no-overflow height_zero">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <!-- Services Items -->
+        <div class="col-md-9">
+        </div> 
+        <!-- End Services Items --> 
+
+        <!-- Form Detailed -->
+        <div class="col-md-3">
+          <div class="form-detailed">
+            <div class="header-detailed">
+              <div class="price-detailed">
+                <%= number_to_currency(hotel.promo_price, unit: "$") %>
+              </div>
+
+              <div class="frequency-detailed">
+                Per Night
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </div>
+  </div>   
+  <!-- End content info - Features--> 
+
+  <!-- End content info - Grey Section-->
+  <div class="content_info">
+    <!-- Info Resalt-->
+    <div class="content_resalt paddings-mini tabs-detailed">
+      <div class="container wow fadeInUp">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Nav Tabs-->
+            <ul class="nav nav-tabs" id="myTab">
+              <li class="active">
+                <a href="#hotel" data-toggle="tab"><i class="fa fa-home"></i> DESCRIPTION</a>
+              </li>
+              <li>
+                <a href="#faq" data-toggle="tab"><i class="fa fa-search"></i>FAQ QUESTIONS</a>
+              </li>
+              <li>
+                <%= link_to(
+                  '<i class="fa fa-check"></i>Request Now'.html_safe,
+                  new_search_result_booking_path(search.id, hotel.id),
+                  class: "btn"
+                ) %>
+              </li>
+            </ul>
+            <!-- End Nav Tabs-->
+
+            <div class="tab-content">
+              <!-- Tab One - Hotel -->
+              <div class="tab-pane active" id="hotel">
+                <h2>Description</h2>
+                <p><%= truncate(hotel.description, length: 1000) %></p>
+
+                <h3>Facilities</h3>
+                <div class="row">
+                  <% amenities = hotel.room_amenities.concat(hotel.property_amenities) %>
+                  <% column_item  = (amenities.count.to_f / 3).ceil %>
+                  <div class="col-md-4">
+                    <ul class="list-styles">
+                      <% amenities.slice(0, column_item).each do |amn| %>
+                        <li><i class="fa fa-check"></i> <%= amn %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="list-styles">
+                      <% amenities.slice(column_item, column_item).each do |amn| %>
+                        <li><i class="fa fa-check"></i> <%= amn %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="list-styles">
+                      <% amenities.slice(column_item * 2, column_item).each do |amn| %>
+                        <li><i class="fa fa-check"></i> <%= amn %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                  <p>
+                  <br /><br />
+                    <%= link_to "Back to results", search_results_path(search.id),
+                      class: "btn btn-primary" %>
+                  </p>
+                </div>
+              </div>
+              <!-- end Tab One - Hotel -->
+
+              <!-- Tab Theree - faq -->
+              <div class="tab-pane" id="faq">
+                <%= render partial: "faq", locals: { hotel: hotel} %>
+              </div>
+              <!-- Tend ab Theree - faq -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Info Resalt-->
+  </div>
+  <!-- End content info - Grey Section--> 
+</div>
+<!-- End Content Central -->
