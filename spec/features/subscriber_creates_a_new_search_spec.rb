@@ -21,14 +21,4 @@ feature "New Search" do
     expect(current_path).to eq(impact_travel.search_path(search.search_id))
     expect(page).to have_content("Looking for hotels in Bangkok, Thailand")
   end
-
-  def login_with_valid_credentials
-    visit impact_travel.new_session_path
-    subscriber = build(:login, name: "username")
-    stub_session_create_api(subscriber.attributes)
-
-    fill_in "login_name", with: subscriber.name
-    fill_in "login_password", with: subscriber.password
-    click_on "Login"
-  end
 end
