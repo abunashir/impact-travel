@@ -14,7 +14,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem "simple_form", "~> 3.2.1"
-gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "abe8d41"
+gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "44f6b21"
 gem "factory_girl"
 gem "jquery-rails"
 gem "sass-rails"
@@ -23,3 +23,4 @@ gem "font-awesome-rails"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "autoprefixer-rails"
 gem "will_paginate", "~> 3.0.6"
+gem "country_select"

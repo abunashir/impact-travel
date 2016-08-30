@@ -1,0 +1,128 @@
+<%-
+  user    = @user
+  puts user
+  hotel   = @booking.result
+  search  = hotel.search
+%>
+
+<!-- Section Title-->    
+<div class="section-title-01">
+  <!-- Parallax Background -->
+  <div class="bg_parallax image_05_parallax"></div>
+  <!-- Parallax Background -->
+
+  <!-- Content Parallax-->
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1><%= search.location %></h1>
+      <div class="crumbs">
+        <ul>
+          <li><%= search.check_in %> - <%= search.check_out %></li>
+          <li>/</li>
+          <li><%= search.adults %> Adults</li>  
+          <li>/</li>
+          <li><%= search.children %> Children</li>  
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Content Parallax--> 
+</div>
+<!-- End Section Title-->
+
+<!--Content Central -->
+<div class="content-central">
+  <!-- Shadow Semiboxed -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+  <!-- End Shadow Semiboxed -->
+
+  <!-- End content info - page Fill with -->
+  <div class="content_info">
+    <div class="paddings-mini">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-8">
+            <h3>Primary traveller details</h3>
+            <div class="form_holder">
+            <% post_url = search_result_bookings_path(search.id, hotel.id) %>
+            <%= simple_form_for @booking, url: post_url,
+              html: {class: 'travelia_form'} do |f| %>
+              <%= f.input :hotel_id, as: :hidden,
+                input_html: {value: hotel.id } %>
+
+              <%= f.input :hotel_name, as: :hidden,
+                input_html: { value: hotel.name } %>
+
+              <%= f.input :hotel_price, as: :hidden,
+                input_html: { value: hotel.price } %>
+
+              <%= f.input :promo_rate, as: :hidden,
+                input_html: {value: hotel.promo_price} %>
+
+              <%= f.input :hotel_score, as: :hidden, input_html:
+                { value: hotel.review_score } %>
+
+              <%= f.input :hotel_total_reviews, as: :hidden, input_html:
+                {value: hotel.total_reviews} %>
+
+              <%= f.input :hotel_description, as: :hidden, input_html:
+                { value: hotel.room_rate["description"]} %>
+
+              <%= f.input :hotel_currency, as: :hidden, input_html:
+                {value: hotel.currency_code } %>
+
+              <%= f.input :first_name %>
+              <%= f.input :last_name %>
+
+              <%= f.input :email %>
+              <%= f.input :phone %>
+
+              <%= f.input :address, as: :text, input_html: {class: "text_input"} %>
+              <%= f.input :city %>
+
+              <%= f.input :zip %>
+              <%= f.input :country, input_html: { class: "form-control" } %>
+
+              <%= f.input :special_request, as: :text %>
+              <%= f.button :submit, "Submit request", class: "btn btn-primary"  %>
+              <% end %>
+            </div>
+
+            <div id="result"></div>  
+          </div>
+
+          <!-- Sidebars -->
+          <div class="col-md-4">
+            <aside>
+              <h4> &nbsp; </h4>
+              <address>
+                <strong><%= hotel.name  %></strong><br>
+                <i class="fa fa-map-marker"></i><%= hotel.address %><br>
+                <i class="fa fa-usd"></i>
+                Aprx.
+                <%= number_to_currency(hotel.price, unit: hotel.currency_code) %>
+                / Per night
+                <br />
+              </address>
+
+              <aside>
+                <h4>Gallery</h4>
+                <ul id="" class="thumbs">
+                  <% hotel.images.slice(0, 12).each do |img| %>
+                    <li><%= image_tag img %></li>
+                  <% end %>
+                </ul>
+              </aside>
+          </div>
+          <!-- End Sidebars -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End content info - page Fill with  --> 
+</div>
+<!-- End Content Central -->

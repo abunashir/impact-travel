@@ -1,0 +1,158 @@
+<%-
+  booking     = @booking
+  search      = booking.travel_criteria
+  hotel       = booking.properties.first
+  user        = booking.user
+  travellers  = booking.travellers
+%>
+
+
+<!-- Section Title-->    
+<div class="section-title-01">
+  <!-- Parallax Background -->
+  <div class="bg_parallax image_05_parallax"></div>
+  <!-- Parallax Background -->
+
+  <!-- Content Parallax-->
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1><%= search.location %></h1>
+      <div class="crumbs">
+        <ul>
+          <li><%= search.check_in %> - <%= search.check_out %></li>
+          <li>/</li>
+          <li><%= search.adults %> Adults</li>  
+          <li>/</li>
+          <li><%= search.children %> Children</li>  
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Content Parallax--> 
+</div>
+<!-- End Section Title-->
+
+<!--Content Central -->
+<div class="content-central">
+  <!-- Shadow Semiboxed -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+  <!-- End Shadow Semiboxed -->
+
+  <!-- End content info - page Fill with -->
+  <div class="content_info">
+    <div class="paddings-mini">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-8">
+            <h3>Booking confirmation</h3>
+            <p class="upcase">We have received your request</p>
+            <p>
+            This is your request summary and request number. Please note the
+            request number as you will need this when you contact our designated
+            agent. On average you should get a response within the next 24 hours.
+            </p>
+
+            <table class="table table-bordered table-striped">
+              <tr>
+                <td>Booking Number</td>
+                <td><%= booking.code.upcase %></td>
+              </tr>
+
+              <% traveller = travellers.first %>
+
+              <tr>
+                <td>First Name</td>
+                <td><%= traveller.first_name  %></td>
+              </tr>
+
+              <tr>
+                <td>Last Name</td>
+                <td><%= traveller.last_name  %></td>
+              </tr>
+
+              <tr>
+                <td>Email</td>
+                <td><%= traveller.email  %></td>
+              </tr>
+
+              <tr>
+                <td>Phone</td>
+                <td><%= traveller.phone  %></td>
+              </tr>
+
+              <tr>
+                <td>Address</td>
+                <td>
+                  <%= traveller.address  %>,
+                  <%= traveller.city %>,
+                  <%= traveller.zip %>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Hotel name</td>
+                <td><%= hotel.name %></td>
+              </tr>
+
+              <tr>
+                <td>Check In</td>
+                <td><%= search.check_in %></td>
+              </tr>
+
+              <tr>
+                <td>Check Out</td>
+                <td><%= search.check_out  %></td>
+              </tr>
+
+              <tr>
+                <td>Guests</td>
+                <td><%= search.adults %> Adults,
+                  <%= search.children  %> Children</td>
+              </tr>
+
+            </table>
+
+            <br />
+
+            <p>
+            <%= link_to(
+              "Back to home",
+              impact_travel.home_path,
+              class:  "btn btn-primary"
+            ) %>
+            </p>
+
+            <div id="result"></div>
+          </div>
+
+          <!-- Sidebars -->
+          <div class="col-md-4">
+            <aside>
+              <h4> Need help?</h4>
+
+              <address>
+                <strong>Canadian Discount Network</strong><br>
+                <i class="fa fa-map-marker"></i>
+                211, 1235 Fairview Street, Burlington, ON<br />
+
+                <i class="fa fa-phone"></i>
+                <a href="tel:+1 (888) 478-1489">+1 (888) 478-1489</a><br />
+
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:support@cdn.travel">support@cdn.travel</i>
+
+
+              </address>
+          </div>
+          <!-- End Sidebars -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End content info - page Fill with  --> 
+</div>
+<!-- End Content Central -->

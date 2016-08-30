@@ -6,10 +6,11 @@ ImpactTravel::Engine.routes.draw do
 
   resources :searches do
     resources :results do
-      resources :bookings
+      resources :bookings, only: [:new, :create]
     end
   end
 
+  resources :bookings, except: [:new, :create]
   resources :condos
   resources :hotels
   resources :cruises
