@@ -1,0 +1,71 @@
+<h4>Your subscription profile</h4>
+<%= render "flashes" %>
+<% member = @account %>
+
+<div class="account_holder">
+  <table class="table table-striped">
+    <tr>
+      <td>Name</td>
+      <td><%= member.name %></td>
+    </tr>
+
+    <tr>
+      <td>Phone</td>
+      <td><%= member.phone  %></td>
+    </tr>
+
+    <tr>
+      <td>Address</td>
+      <td><%= member.address  %></td>
+    </tr>
+
+    <tr>
+      <td>City</td>
+      <td><%= member.city %></td>
+    </tr>
+
+    <tr>
+      <td>Province</td>
+      <td><%= member.state %></td>
+    </tr>
+
+    <tr>
+      <td>Post Code</td>
+      <td><%= member.zip %></td>
+    </tr>
+
+    <tr>
+      <td>Country</td>
+      <td><%= member.country %></td>
+    </tr>
+
+    <tr>
+      <td>Spouse name</td>
+      <td><%= member.spouse_name %></td>
+    </tr>
+
+    <tr>
+      <td>Username</td>
+      <td><%= member.username %></td>
+    </tr>
+
+    <tr>
+      <td>Sex</td>
+      <td><%= member.sex.capitalize if member.sex %></td>
+    </tr>
+
+    <tr>
+      <td>Status</td>
+      <td><%= member.status %></td>
+    </tr>
+
+  </table>
+
+  <p>
+  <%= link_to "Edit profile", edit_account_path,
+    class: "btn btn-primary" %>
+</p>
+
+
+</div>
+

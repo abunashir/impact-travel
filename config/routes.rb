@@ -19,5 +19,9 @@ ImpactTravel::Engine.routes.draw do
   resources :tours
   resources :packages
   resources :wellnesses
-  resource :account
+  resource :account do
+    resource :password
+  end
+  resources :supplementaries
+  resource :contact
 end

@@ -1,0 +1,55 @@
+<!-- Section Title-->
+<div class="section-title-01">
+  <!-- Parallax Background -->
+  <div class="bg_parallax image_05_parallax"></div>
+  <!-- Parallax Background -->
+
+  <!-- Content Parallax-->
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1>Subscriber Area</h1>
+      <div class="crumbs">
+        <ul>
+          <li>Manage your profile, supplementary subscribers and bookings.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Content Parallax--> 
+</div>
+<!-- End Section Title-->
+
+<!--Content Central -->
+<div class="content-central">
+  <!-- Shadow Semiboxed -->
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+  <!-- End Shadow Semiboxed -->
+
+  <!-- End content info - page Fill with -->
+  <div class="content_info">
+    <div class="paddings-mini">
+      <div class="container">
+        <div class="row">
+
+          <!-- Sidebars -->
+          <div class="col-md-4">
+            <%= render "sidebar_nav" %>
+          </div>
+          <!-- End Sidebars -->
+
+
+          <div class="col-md-8">
+            <%= yield %>
+            <div id="result"></div>  
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End content info - page Fill with  --> 
+</div>
+<!-- End Content Central -->
+
