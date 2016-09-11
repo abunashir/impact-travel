@@ -24,6 +24,10 @@ feature "Creating a new booking" do
 
     click_on "Request Now"
     submit_the_booking_form(subscriber)
+
+    expect(page).to have_content("john.doe@example.com")
+    expect(page).to have_content("Booking confirmation")
+    expect(current_path).to eq(impact_travel.booking_path(booking_id))
   end
 
   def submit_the_booking_form(subscriber)

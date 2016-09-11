@@ -2,3 +2,13 @@ en:
   sessions:
     created: "You are logged in successfully!"
     destroyed: "You are logged out successfully!"
+
+  search:
+    create:
+      errors: "There are some errors creating your search"
+      success: "Successfully created!, we are working on results"
+
+  booking:
+    confirmation:
+      "We have received your booking request, one of our agent will get in
+      touch very soon!"
