@@ -10,7 +10,7 @@ Climate](https://codeclimate.com/github/impactservices/impact-travel/badges/gpa.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "impact-travel", github: "impactservices/impact-travel"
+gem "impact-travel", github: "abunashir/impact-travel"
 ```
 
 And then execute:
@@ -44,7 +44,7 @@ your contribution.
 - Clone the repository.
 
 ```sh
-% git clone git@github.com:impactservices/impact-travel.git
+% git clone git@github.com:abunashir/impact-travel.git
 ```
 
 - Setup your environment.
@@ -70,7 +70,7 @@ Here are a few technical guidelines to follow:
 1. [Squash your commits][squash] after receiving feedback.
 1. Party!
 
-[issues]: https://github.com/impactservices/impact-travel/issues
+[issues]: https://github.com/abunashir/impact-travel/issues
 [squash]: https://github.com/thoughtbot/guides/tree/master/protocol/git#write-a-feature
 
 ## Credits
@@ -81,4 +81,4 @@ This application is developed, maintained and funded by [Impact Services Co.
 Ltd.] (https://www.impactservices.co.th)
 
 Thank you to all [the contributors]
-(https://github.com/impactservices/impact-travel/graphs/contributors)
+(https://github.com/abunashir/impact-travel/graphs/contributors)
