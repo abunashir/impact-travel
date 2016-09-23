@@ -7,6 +7,8 @@ module ImpactTravel
       if authenticated?
         sign_in(@login.subscriber)
         redirect_to(home_path, notice: I18n.t("sessions.created"))
+      else
+        redirect_to(new_session_path, notice: I18n.t("sessions.invalid"))
       end
     end
 

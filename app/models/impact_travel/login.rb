@@ -8,6 +8,7 @@ module ImpactTravel
 
     def authenticate
       @response = DiscountNetwork::Session.create(attributes)
+    rescue RestClient::Unauthorized
     end
 
     def subscriber
