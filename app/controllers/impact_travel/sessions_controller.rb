@@ -1,6 +1,7 @@
 module ImpactTravel
   class SessionsController < ApplicationController
     layout "impact_travel/login"
+    before_action :redirect_logged_in_subscriber, except: [:destroy]
 
     def create
       if authenticated?

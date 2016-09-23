@@ -26,5 +26,11 @@ module ImpactTravel
     def set_auth_token
       DiscountNetwork.configuration.auth_token = user_auth_token
     end
+
+    def redirect_logged_in_subscriber
+      if logged_in?
+        redirect_to(home_path)
+      end
+    end
   end
 end
