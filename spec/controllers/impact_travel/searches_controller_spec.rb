@@ -30,6 +30,36 @@ describe ImpactTravel::SearchesController do
     end
   end
 
+  describe "#show" do
+    context "with valid search id" do
+      it "shows the results loading page" do
+        sign_in_as(build(:subscriber))
+        search = build(:search)
+
+        stub_search_find_api(search.search_id)
+        get :show, id: search.search_id
+
+        expect(response.status).to eq(200)
+        expect(response).to render_template(layout: "impact_travel/loading")
+      end
+    end
+
+    context "with invalid search id" do
+      it "redirect to home_path" do
+        sign_in_as(build(:subscriber))
+        search_id = "invalid_id"
+        stub_unauthorized_dn_api_reqeust(
+          ["searches", search_id].join("/"),
+        )
+
+        get :show, id: search_id
+
+        expect(response).to redirect_to(home_path)
+        expect(flash.notice).to eq(I18n.t("search.show.error"))
+      end
+    end
+  end
+
   def sign_in_as(subscriber)
     session[:auth_token] = subscriber.token
   end

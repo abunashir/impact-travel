@@ -27,6 +27,7 @@ module ImpactTravel
 
     def self.find(search_id)
       DiscountNetwork::Search.find(search_id)
+    rescue RestClient::Unauthorized
     end
   end
 end

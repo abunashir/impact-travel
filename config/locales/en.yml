@@ -5,6 +5,9 @@ en:
     invalid: "Please re-check your login credentials"
 
   search:
+    show:
+      error: "Does not seams to be a valid search id"
+
     create:
       errors: "There are some errors creating your search"
       success: "Successfully created!, we are working on results"

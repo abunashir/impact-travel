@@ -4,8 +4,9 @@ module ImpactTravel
     before_action :set_auth_token
 
     def show
-      @search = Search.find(params[:id])
-      render layout: "impact_travel/loading"
+      load_search || redirect_to(
+        home_path, notice: I18n.t("search.show.error")
+      )
     end
 
     def create
@@ -27,6 +28,13 @@ module ImpactTravel
 
     def search
       @search = ImpactTravel::Search.new(search_params)
+    end
+
+    def load_search
+      @search = Search.find(params[:id])
+      if @search
+        render(layout: "impact_travel/loading")
+      end
     end
 
     def search_params
