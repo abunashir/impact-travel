@@ -12,6 +12,7 @@ FactoryGirl.define do
     address "House # 1, Main Street"
     city "New York"
     zip "123 ABC"
+    token "ABCD_123"
   end
 
   factory :search, class: ImpactTravel::Search do

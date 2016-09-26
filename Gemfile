@@ -14,7 +14,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem "simple_form", "~> 3.2.1"
-gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "f1f2928"
+gem "discountnetwork", github: "discountnetwork/discountnetwork-ruby", ref: "c360982"
 gem "factory_girl"
 gem "jquery-rails"
 gem "sass-rails"

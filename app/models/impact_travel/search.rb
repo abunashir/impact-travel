@@ -15,6 +15,7 @@ module ImpactTravel
 
     def create
       @response = DiscountNetwork::Search.create(attributes)
+    rescue RestClient::UnprocessableEntity
     end
 
     def search
