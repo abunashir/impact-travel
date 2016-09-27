@@ -20,8 +20,9 @@ RSpec.configure do |config|
   config.order = :random
   config.use_transactional_fixtures = true
 
-  # Feature Helpers
+  # Support Helpers
   config.include Feature::AuthenticationHelpers
+  config.include SignInHelpers
 end
 
 def restore_configuration_to_default
