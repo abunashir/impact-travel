@@ -10,12 +10,18 @@ module ImpactTravel
     end
 
     def show
-      @result = Result.find_by(
-        search_id: params[:search_id], hotel_id: params[:id]
+      load_result || redirect_to(
+        home_path, notice: I18n.t("search.invalid")
       )
     end
 
     private
+
+    def load_result
+      @result = Result.find_by(
+        search_id: params[:search_id], hotel_id: params[:id],
+      )
+    end
 
     def load_results
       @results = Result.where(search_id: params[:search_id])

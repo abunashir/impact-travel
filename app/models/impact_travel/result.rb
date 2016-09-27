@@ -8,9 +8,8 @@ module ImpactTravel
     end
 
     def find
-      DiscountNetwork::Result.find_by(
-        search_id: search_id, hotel_id: hotel_id
-      )
+      DiscountNetwork::Result.find_by(search_id: search_id, hotel_id: hotel_id)
+    rescue RestClient::Unauthorized
     end
 
     def self.where(search_id:)

@@ -32,4 +32,36 @@ describe ImpactTravel::ResultsController do
       end
     end
   end
+
+  describe "#show" do
+    context "with valid result id" do
+      it "renders the result page" do
+        sign_in_as_subscriber
+        result = build(:result)
+        stub_search_result_api(
+          search_id: result.search_id, hotel_id: result.hotel_id,
+        )
+
+        get(:show, id: result.hotel_id, search_id: result.search_id)
+
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context "with invalid result id" do
+      it "reidrects to home page" do
+        sign_in_as_subscriber
+        result = build(:result, hotel_id: "invalid_hotel")
+        stub_unauthorized_dn_api_reqeust(
+          ["searches", result.search_id, "results", result.hotel_id].join("/"),
+        )
+
+        get(:show, id: result.hotel_id, search_id: result.search_id)
+
+        expect(response).to redirect_to(home_path)
+        expect(flash.notice).to eq(I18n.t("search.invalid"))
+      end
+    end
+  end
 end
