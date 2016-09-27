@@ -3,9 +3,8 @@ module ImpactTravel
     attr_accessor :search_id, :hotel_id
 
     def all
-      DiscountNetwork::Result.where(
-        search_id: search_id
-      )
+      DiscountNetwork::Result.where(search_id: search_id)
+    rescue RestClient::UnprocessableEntity
     end
 
     def find

@@ -7,6 +7,7 @@ en:
   search:
     show:
       error: "Does not seams to be a valid search id"
+    invalid: "Does not seams to be a valid search"
 
     create:
       errors: "There are some errors creating your search"
