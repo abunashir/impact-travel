@@ -6,6 +6,8 @@ module ImpactTravel
     attr_accessor :hotel_name, :hotel_price, :promo_rate, :hotel_score
     attr_accessor :hotel_total_reviews, :hotel_description, :hotel_currency
 
+    validates :first_name, :last_name, :email, :phone, :address, presence: true
+
     def attributes
       {
         search_id: search_id,
@@ -25,7 +27,9 @@ module ImpactTravel
     end
 
     def create
-      @response = DiscountNetwork::Booking.create(attributes)
+      if valid?
+        @response = DiscountNetwork::Booking.create(attributes)
+      end
     end
 
     def booking

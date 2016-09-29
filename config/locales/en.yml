@@ -17,3 +17,5 @@ en:
     confirmation:
       "We have received your booking request, one of our agent will get in
       touch very soon!"
+    create:
+      errors: "You need to provide valid traveller details"

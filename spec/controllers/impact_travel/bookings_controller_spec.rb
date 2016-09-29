@@ -54,6 +54,28 @@ describe ImpactTravel::BookingsController do
         expect(flash.notice).to eq(I18n.t("booking.confirmation"))
       end
     end
+
+    context "with invalid booking information" do
+      it "re renders the booking form" do
+        sign_in_as_subscriber
+        post(
+          :create,
+          search_id: search_id,
+          result_id: result_id,
+          booking: attributes_for(
+            :booking,
+            first_name: nil,
+            last_name: nil,
+            phone: nil,
+            address: nil,
+          ),
+        )
+
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:new)
+        expect(flash.notice).to eq(I18n.t("booking.create.errors"))
+      end
+    end
   end
 
   def search_id
