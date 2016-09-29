@@ -8,9 +8,8 @@ module ImpactTravel
     end
 
     def new
-      @booking = ImpactTravel::Booking.new(
-        search_id: params[:search_id],
-        hotel_id: params[:result_id]
+      valid_result? || redirect_to(
+        home_path, notice: I18n.t("search.invalid")
       )
     end
 
@@ -19,6 +18,17 @@ module ImpactTravel
     end
 
     private
+
+    def valid_result?
+      @result ||= build_booking.result
+    end
+
+    def build_booking
+      @booking ||= ImpactTravel::Booking.new(
+        search_id: params[:search_id],
+        hotel_id: params[:result_id],
+      )
+    end
 
     def create_booking
       if booking.create
