@@ -24,6 +24,7 @@ module ImpactTravel
 
     def find
       @response = DiscountNetwork::Booking.find(id)
+    rescue RestClient::UnprocessableEntity
     end
 
     def create

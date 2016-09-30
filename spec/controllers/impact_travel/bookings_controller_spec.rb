@@ -3,6 +3,34 @@ require "spec_helper"
 describe ImpactTravel::BookingsController do
   routes { ImpactTravel::Engine.routes }
 
+  describe "#show" do
+    context "with valid booking id" do
+      it "shows the booking confirmation" do
+        sign_in_as_subscriber
+        booking_id = 123_456_789
+
+        stub_booking_find_api(booking_id)
+        get :show, id: booking_id
+
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context "with invalid booking id" do
+      it "redirects to the home page" do
+        sign_in_as_subscriber
+        booking_id = "invalid"
+
+        stub_unprocessable_dn_api_request(["bookings", booking_id].join("/"))
+        get :show, id: booking_id
+
+        expect(response).to redirect_to(home_path)
+        expect(flash.notice).to eq(I18n.t("booking.invalid"))
+      end
+    end
+  end
+
   describe "#new" do
     context "with valid search result" do
       it "renders the booking form" do

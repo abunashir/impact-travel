@@ -4,7 +4,9 @@ module ImpactTravel
     before_action :set_auth_token
 
     def show
-      @booking = ImpactTravel::Booking.find(params[:id])
+      load_booking || redirect_to(
+        home_path, notice: I18n.t("booking.invalid")
+      )
     end
 
     def new
@@ -20,6 +22,10 @@ module ImpactTravel
     end
 
     private
+
+    def load_booking
+      @booking = ImpactTravel::Booking.find(params[:id])
+    end
 
     def valid_result?
       @result ||= build_booking.result

@@ -14,6 +14,7 @@ en:
       success: "Successfully created!, we are working on results"
 
   booking:
+    invalid: "Does not seams to be a valid booking id"
     confirmation:
       "We have received your booking request, one of our agent will get in
       touch very soon!"
