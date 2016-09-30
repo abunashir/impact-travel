@@ -19,7 +19,7 @@ describe ImpactTravel::Result do
       hotel_id = 352_96
       stub_search_result_api(search_id: search.search_id, hotel_id: hotel_id)
       result = ImpactTravel::Result.find_by(
-        search_id: search.search_id, hotel_id: hotel_id
+        search_id: search.search_id, hotel_id: hotel_id,
       )
 
       expect(result.name).not_to be_nil

@@ -13,7 +13,7 @@ feature "New Search" do
     fill_in "search_check_out", with: search.check_out
     select "2 Guests", from: "search_guests"
     find("input#search_location_id", visible: false).set(
-      search.location_id
+      search.location_id,
     )
 
     click_on "Search"

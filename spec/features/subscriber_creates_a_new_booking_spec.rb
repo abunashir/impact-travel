@@ -13,8 +13,8 @@ feature "Creating a new booking" do
     stub_search_result_api(search_id: search_id, hotel_id: hotel_id)
     stub_search_booking_create_api(
       booking_attributes(
-        search_id: search_id, hotel_id: hotel_id, subscriber: subscriber
-      )
+        search_id: search_id, hotel_id: hotel_id, subscriber: subscriber,
+      ),
     )
 
     visit impact_travel.search_results_path(search_id)
@@ -56,7 +56,7 @@ feature "Creating a new booking" do
         address: subscriber.address,
         city: subscriber.city,
         zip: subscriber.zip,
-        country: "US"
+        country: "US",
       },
 
       properties: {
@@ -65,8 +65,8 @@ feature "Creating a new booking" do
         price: "14.3469",
         currency_code: "USD",
         review_score: "71",
-        total_reviews: "14218"
-      }
+        total_reviews: "14218",
+      },
     }
   end
 end

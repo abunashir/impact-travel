@@ -5,12 +5,12 @@ describe ImpactTravel::Booking do
     it "retrieves the hotel from the specific search" do
       result = build(:result)
       stub_search_result_api(
-        hotel_id: result.hotel_id, search_id: result.search_id
+        hotel_id: result.hotel_id, search_id: result.search_id,
       )
 
       booking = ImpactTravel::Booking.new(
         hotel_id: result.hotel_id,
-        search_id: result.search_id
+        search_id: result.search_id,
       )
 
       expect(booking.result.id).to eq(result.hotel_id)

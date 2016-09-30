@@ -14,7 +14,7 @@ module ImpactTravel
         hotel_id: hotel_id,
         note: special_request,
         travellers: traveller_attributes,
-        properties: property_attributes
+        properties: property_attributes,
       }.compact
     end
 
@@ -52,7 +52,7 @@ module ImpactTravel
         address: address,
         city: city,
         zip: zip,
-        country: country
+        country: country,
       }.compact
     end
 
@@ -63,7 +63,7 @@ module ImpactTravel
         price: promo_rate,
         currency_code: hotel_currency,
         review_score: hotel_score,
-        total_reviews: hotel_total_reviews
+        total_reviews: hotel_total_reviews,
       }.compact
     end
   end

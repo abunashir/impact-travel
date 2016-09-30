@@ -14,5 +14,4 @@ Bundler::GemHelper.install_tasks
 RSpec::Core::RakeTask.new(:spec)
 
 desc "Run the specs and acceptance tests"
-task :default => :spec
-
+task default: :spec

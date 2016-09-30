@@ -21,7 +21,7 @@ module ImpactTravel
       if search.create
         redirect_to(
           impact_travel.search_path(@search.search.id),
-          notice: I18n.t("search.create.success")
+          notice: I18n.t("search.create.success"),
         )
       end
     end

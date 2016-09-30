@@ -42,7 +42,7 @@ module ImpactTravel
       if booking.create
         redirect_to(
           booking_path(booking.booking.id),
-          notice: I18n.t("booking.confirmation")
+          notice: I18n.t("booking.confirmation"),
         )
       end
     end
@@ -51,8 +51,8 @@ module ImpactTravel
       @booking ||= ImpactTravel::Booking.new(
         booking_params.merge(
           search_id: params[:search_id],
-          hotel_id: params[:result_id]
-        )
+          hotel_id: params[:result_id],
+        ),
       )
     end
 
