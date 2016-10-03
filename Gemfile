@@ -8,7 +8,7 @@ gem "country_select"
 gem(
   "discountnetwork",
   github: "discountnetwork/discountnetwork-ruby",
-  ref: "c360982",
+  ref: "876734f",
 )
 gem "factory_girl"
 gem "font-awesome-rails"

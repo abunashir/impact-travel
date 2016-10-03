@@ -29,4 +29,21 @@ describe ImpactTravel::AccountsController do
       end
     end
   end
+
+  describe "#edit" do
+    context "with valid auth_token" do
+      it "renders the edit form" do
+        sign_in_as_subscriber
+        stub_valid_subscriber_account
+        get :edit
+
+        expect(assigns(:account)).not_to be_nil
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
+
+  def stub_valid_subscriber_account
+    stub_account_find_api(DiscountNetwork.configuration.auth_token)
+  end
 end

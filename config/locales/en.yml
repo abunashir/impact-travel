@@ -23,3 +23,4 @@ en:
 
   account:
     invalid: "Your session might be expired, please re login"
+    updated: "You changes has been saved successfully!"

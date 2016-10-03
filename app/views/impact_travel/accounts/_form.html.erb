@@ -1,0 +1,26 @@
+<div class="account_holder">
+  <%= simple_form_for @subscriber, url: account_path, method: :patch,
+    html: {class: "travelia_form" } do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :middle_name %>
+    <%= f.input :last_name %>
+    <%= f.input :spouse_name %>
+    <%= f.input :email %>
+    <%= f.input :username %>
+    <%= f.input(
+      :sex,
+      as: :radio_buttons,
+      collection: [["Male", "male"], ["Female", "female"]]
+    ) %>
+
+    <%= f.input :phone %>
+    <%= f.input :mobile %>
+    <%= f.input :office_phone %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :state, label: "Province" %>
+    <%= f.input :zip, label: "Post Code" %>
+    <%= f.input :country, input_html: {class: "form-control"} %>
+    <%= f.button :submit, "Save changes", class: "btn btn-primary" %>
+  <% end %>
+</div>
