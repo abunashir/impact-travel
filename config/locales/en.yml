@@ -20,3 +20,6 @@ en:
       touch very soon!"
     create:
       errors: "You need to provide valid traveller details"
+
+  account:
+    invalid: "Your session might be expired, please re login"

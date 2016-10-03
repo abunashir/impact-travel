@@ -4,6 +4,7 @@ module ImpactTravel
 
     def find
       @response = DiscountNetwork::Account.find(token)
+    rescue RestClient::Unauthorized
     end
 
     def self.find(account_token = nil)
