@@ -5,8 +5,13 @@ module ImpactTravel
     attr_accessor :city, :state, :zip, :country, :username, :password
     attr_accessor :password_confirmation, :status, :name, :token
 
+    validates :first_name, :last_name, :email, :mobile, :address, presence: true
+    validates :city, :state, :zip, :country, presence: true
+
     def save
-      @response = DiscountNetwork::Account.update(attributes)
+      if valid?
+        @response = DiscountNetwork::Account.update(attributes)
+      end
     end
 
     def attributes

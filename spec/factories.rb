@@ -12,7 +12,22 @@ FactoryGirl.define do
     address "House # 1, Main Street"
     city "New York"
     zip "123 ABC"
+    state "New York"
     token "ABCD_123"
+    mobile "+1 888 123 456 7890"
+    country "US"
+
+    factory :invalid_subscriber do
+      first_name nil
+      last_name nil
+      email nil
+      mobile nil
+      address nil
+      city nil
+      state nil
+      coutry nil
+      username nil
+    end
   end
 
   factory :search, class: ImpactTravel::Search do

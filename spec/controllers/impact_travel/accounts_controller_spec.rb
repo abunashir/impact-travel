@@ -56,6 +56,20 @@ describe ImpactTravel::AccountsController do
     end
   end
 
+  describe "#update" do
+    context "with missing required fields" do
+      it "re renders the subscriber edit screen" do
+        sign_in_as_subscriber
+        stub_valid_subscriber_account
+
+        put :update, subscriber: attributes_for(:invalid_subscriber)
+
+        expect(response).to render_template(:edit)
+        expect(assigns(:subscriber)).not_to be_nil
+      end
+    end
+  end
+
   def stub_valid_subscriber_account
     stub_account_find_api(DiscountNetwork.configuration.auth_token)
   end

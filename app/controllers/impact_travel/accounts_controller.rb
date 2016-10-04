@@ -12,7 +12,9 @@ module ImpactTravel
     end
 
     def update
-      update_account
+      update_account || render_with_error(
+        :edit, message: I18n.t("account.update.error")
+      )
     end
 
     private
@@ -38,6 +40,11 @@ module ImpactTravel
     def redirect_to_sign_path
       destroy_user_sessions
       redirect_to(new_session_path, notice: I18n.t("account.invalid"))
+    end
+
+    def render_with_error(view, message:)
+      flash.now[:error] = message
+      render view.to_sym
     end
 
     def destroy_user_sessions
