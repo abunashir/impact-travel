@@ -8,7 +8,7 @@ module ImpactTravel
     end
 
     def edit
-      build_account
+      build_account || redirect_to_sign_path
     end
 
     def update

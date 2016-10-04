@@ -41,6 +41,19 @@ describe ImpactTravel::AccountsController do
         expect(response).to render_template(:edit)
       end
     end
+
+    context "with invalid auth token" do
+      it "redirects to the new session path" do
+        sign_in_as_subscriber
+        session[:auth_token] = "invalid_token"
+
+        stub_unauthorized_dn_api_reqeust("account")
+        get :edit
+
+        expect(response).to redirect_to(new_session_path)
+        expect(flash.notice).to eq(I18n.t("account.invalid"))
+      end
+    end
   end
 
   def stub_valid_subscriber_account
