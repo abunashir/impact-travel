@@ -42,11 +42,6 @@ module ImpactTravel
       redirect_to(new_session_path, notice: I18n.t("account.invalid"))
     end
 
-    def render_with_error(view, message:)
-      flash.now[:error] = message
-      render view.to_sym
-    end
-
     def destroy_user_sessions
       session[:auth_token] = nil
       DiscountNetwork.configuration.auth_token = nil

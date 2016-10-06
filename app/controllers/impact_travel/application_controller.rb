@@ -27,6 +27,11 @@ module ImpactTravel
       DiscountNetwork.configuration.auth_token = user_auth_token
     end
 
+    def render_with_error(view, message:)
+      flash.now[:error] = message
+      render view.to_sym
+    end
+
     def redirect_logged_in_subscriber
       if logged_in?
         redirect_to(home_path)

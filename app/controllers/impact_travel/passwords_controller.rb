@@ -24,11 +24,6 @@ module ImpactTravel
       @password ||= ImpactTravel::Password.new(password_params)
     end
 
-    def render_with_error(view, message)
-      flash.now[:error] = message
-      render view.to_sym
-    end
-
     def password_params
       params.require(:password).permit(:password, :password_confirmation)
     end

@@ -101,7 +101,7 @@ describe ImpactTravel::BookingsController do
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:new)
-        expect(flash.notice).to eq(I18n.t("booking.create.errors"))
+        expect(flash[:error]).to eq(I18n.t("booking.create.errors"))
       end
     end
   end

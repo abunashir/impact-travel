@@ -16,8 +16,8 @@ module ImpactTravel
     end
 
     def create
-      create_booking || render_with_message(
-        :new, notice: I18n.t("booking.create.errors")
+      create_booking || render_with_error(
+        :new, message: I18n.t("booking.create.errors")
       )
     end
 
@@ -54,11 +54,6 @@ module ImpactTravel
           hotel_id: params[:result_id],
         ),
       )
-    end
-
-    def render_with_message(view, notice:)
-      flash[:notice] = notice
-      render view.to_sym
     end
 
     def booking_params
