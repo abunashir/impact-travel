@@ -1,0 +1,9 @@
+<h4>Change your password</h4>
+<div class="account_holder">
+  <%= simple_form_for @password, url: account_password_path,
+    method: :patch, html: {class: "travelia_form"} do |f| %>
+    <%= f.input :password, label: "New password" %>
+    <%= f.input :password_confirmation, label: "Re-type new password" %>
+    <%= f.button :submit, "Save changes", class: "btn btn-primary" %>
+  <% end %>
+</div>

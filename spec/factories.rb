@@ -61,4 +61,9 @@ FactoryGirl.define do
     hotel_description "This is the description"
     promo_rate "100"
   end
+
+  factory :password, class: ImpactTravel::Password do
+    password "secret_password"
+    password_confirmation "secret_password"
+  end
 end
