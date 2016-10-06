@@ -7,7 +7,7 @@ describe ImpactTravel::PasswordsController do
     context "fields do not match the requirements" do
       it "re renders the password changing form" do
         sign_in_as_subscriber
-        set_account_auth_configuration
+        set_account_auth_token
         password = build(:password, password: "invalid")
 
         patch :update, password: password.attributes
@@ -16,9 +16,5 @@ describe ImpactTravel::PasswordsController do
         expect(response).to render_template(:edit)
       end
     end
-  end
-
-  def set_account_auth_configuration
-    DiscountNetwork.configuration.auth_token = "ABCD_123"
   end
 end

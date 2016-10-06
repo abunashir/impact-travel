@@ -3,11 +3,10 @@ require "spec_helper"
 feature "Changing password" do
   scenario "subscriber changes their password" do
     login_with_valid_credentials
-    auth_token = DiscountNetwork.configuration.auth_token
     password = build(:password)
 
-    stub_account_find_api(auth_token)
-    stub_account_update_api(auth_token, password.attributes)
+    stub_account_find_api(account_auth_token)
+    stub_account_update_api(account_auth_token, password.attributes)
 
     click_on "my_account"
     click_on "Change password"

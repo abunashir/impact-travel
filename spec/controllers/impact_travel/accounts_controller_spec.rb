@@ -7,7 +7,7 @@ describe ImpactTravel::AccountsController do
     context "valid auth_token exists" do
       it "renders the subscriber profile" do
         sign_in_as_subscriber
-        stub_account_find_api(DiscountNetwork.configuration.auth_token)
+        stub_account_find_api(account_auth_token)
         get :show
 
         expect(response.status).to eq(200)
@@ -71,6 +71,6 @@ describe ImpactTravel::AccountsController do
   end
 
   def stub_valid_subscriber_account
-    stub_account_find_api(DiscountNetwork.configuration.auth_token)
+    stub_account_find_api(account_auth_token)
   end
 end

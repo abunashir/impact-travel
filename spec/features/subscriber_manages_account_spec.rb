@@ -3,9 +3,7 @@ require "spec_helper"
 feature "Subscriber profile" do
   scenario "browse their own profile" do
     login_with_valid_credentials
-    stub_account_find_api(
-      DiscountNetwork.configuration.auth_token,
-    )
+    stub_account_find_api(account_auth_token)
 
     click_on "my_account"
 
@@ -16,10 +14,8 @@ feature "Subscriber profile" do
 
   scenario "edit their profile" do
     login_with_valid_credentials
-    stub_account_find_api(DiscountNetwork.configuration.auth_token)
-    stub_account_update_api(
-      DiscountNetwork.configuration.auth_token, subscriber_attributes
-    )
+    stub_account_find_api(account_auth_token)
+    stub_account_update_api(account_auth_token, subscriber_attributes)
 
     click_on "my_account"
     click_on "Edit profile"
