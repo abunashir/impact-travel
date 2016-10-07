@@ -16,6 +16,7 @@ FactoryGirl.define do
     token "ABCD_123"
     mobile "+1 888 123 456 7890"
     country "US"
+    username "john.doe"
 
     factory :invalid_subscriber do
       first_name nil

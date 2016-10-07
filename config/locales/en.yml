@@ -24,3 +24,7 @@ en:
   account:
     invalid: "Your session might be expired, please re login"
     updated: "You changes has been saved successfully!"
+    activated: "Your account has been activated!"
+
+  activation:
+    invalid: "Please provide all the required fields to activate your account"

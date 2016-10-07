@@ -20,6 +20,7 @@ ImpactTravel::Engine.routes.draw do
   resources :packages
   resources :wellnesses
   resource :account do
+    resource :activation
     resource :password
   end
   resources :supplementaries
