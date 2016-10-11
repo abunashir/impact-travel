@@ -12,12 +12,36 @@ describe ImpactTravel::Configuration do
     end
   end
 
-  describe "#logo" do
-    it "returns the configured logo name" do
-      logo = "logo.png"
-      ImpactTravel.configure { |config| config.logo = logo }
+  describe "site configurations" do
+    it "returns the site configurations" do
+      site_title = "Impact Travel"
+      site_abbreviation = "IT"
+      site_logo = "logo.png"
+      site_contact = "+1 123 456 789 1023"
 
-      expect(ImpactTravel.configuration.logo).to eq(logo)
+      site_keywords = "travel, discount"
+      site_description = "Travel the world in cheapest price"
+      site_author = "Impact Services"
+
+      ImpactTravel.configure do |config|
+        config.logo = site_logo
+        config.title = site_title
+        config.abbreviation = site_abbreviation
+        config.keywords = site_keywords
+        config.description = site_description
+        config.author = site_author
+        config.phone = site_contact
+      end
+
+      configuration = ImpactTravel.configuration
+
+      expect(configuration.logo).to eq(site_logo)
+      expect(configuration.title).to eq(site_title)
+      expect(configuration.phone).to eq(site_contact)
+      expect(configuration.author).to eq(site_author)
+      expect(configuration.keywords).to eq(site_keywords)
+      expect(configuration.description).to eq(site_description)
+      expect(configuration.abbreviation).to eq(site_abbreviation)
     end
   end
 end

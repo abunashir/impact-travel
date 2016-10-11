@@ -29,6 +29,16 @@ initializer to set up your configuration.
 ImpactTravel.configure do |config|
   config.api_key = "DISOUNT_NETWORK_API_KEY"
   config.logo = "logo-name.png"
+
+  # Application attributes
+  config.title = "Application Name / Title"
+  config.abbreviation = "Application abbreviation"
+  config.phone = "Contact Number for the app"
+
+  # Search engine meta attributes
+  config.keywords = "Keywords for meta attribute"
+  config.description = "Description for meta attribute"
+  config.author = "Author for meta attribute"
 end
 ```
 
