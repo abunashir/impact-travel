@@ -28,6 +28,7 @@ initializer to set up your configuration.
 ```ruby
 ImpactTravel.configure do |config|
   config.api_key = "DISOUNT_NETWORK_API_KEY"
+  config.logo = "logo-name.png"
 end
 ```
 

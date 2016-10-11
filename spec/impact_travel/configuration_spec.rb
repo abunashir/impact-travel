@@ -11,4 +11,13 @@ describe ImpactTravel::Configuration do
       expect(ImpactTravel.configuration.api_key).to eq(api_key)
     end
   end
+
+  describe "#logo" do
+    it "returns the configured logo name" do
+      logo = "logo.png"
+      ImpactTravel.configure { |config| config.logo = logo }
+
+      expect(ImpactTravel.configuration.logo).to eq(logo)
+    end
+  end
 end

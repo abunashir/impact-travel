@@ -4,6 +4,10 @@ module ImpactTravel
       @app_theme ||= "impact_travel"
     end
 
+    def site_logo
+      @site_logo ||= ImpactTravel.configuration.logo
+    end
+
     def site_contact
       @site_contact ||= "+1 888 123 4567"
     end

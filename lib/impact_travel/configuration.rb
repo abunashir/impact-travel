@@ -1,6 +1,6 @@
 module ImpactTravel
   class Configuration
-    attr_accessor :api_key
+    attr_accessor :api_key, :logo
   end
 
   def self.configure
