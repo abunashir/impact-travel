@@ -28,3 +28,6 @@ en:
 
   activation:
     invalid: "Please provide all the required fields to activate your account"
+
+  password_reset:
+    invalid: "Does not seems to be a valid subscirber email"

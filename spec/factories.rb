@@ -67,4 +67,8 @@ FactoryGirl.define do
     password "secret_password"
     password_confirmation "secret_password"
   end
+
+  factory :password_reset, class: ImpactTravel::PasswordReset do
+    email "john.doe@example.com"
+  end
 end

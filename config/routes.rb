@@ -21,8 +21,13 @@ ImpactTravel::Engine.routes.draw do
   resources :wellnesses
   resource :account do
     resource :activation
-    resource :password
+    resource :password, only: [:edit, :update]
   end
+
   resources :supplementaries
   resource :contact
+
+  resource :password do
+    resource :reset, only: [:new, :create]
+  end
 end
