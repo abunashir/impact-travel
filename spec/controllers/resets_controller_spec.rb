@@ -16,4 +16,16 @@ describe ImpactTravel::ResetsController do
       end
     end
   end
+
+  describe "#show" do
+    it "redirects invalid reset request" do
+      invalid_token = "invalid"
+      stub_unauthorized_dn_api_reqeust("account/resets/invalid")
+
+      get :show, id: invalid_token
+
+      expect(response).to redirect_to(new_session_path)
+      expect(flash.notice).to eq(I18n.t("password_reset.invalid_token"))
+    end
+  end
 end

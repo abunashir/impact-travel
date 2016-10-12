@@ -27,6 +27,10 @@ module ImpactTravel
       DiscountNetwork.configuration.auth_token = user_auth_token
     end
 
+    def set_app_session(key, value)
+      session[key.to_sym] = value
+    end
+
     def render_with_error(view, message:)
       flash.now[:error] = message
       render view.to_sym

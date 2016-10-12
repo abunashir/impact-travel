@@ -28,6 +28,6 @@ ImpactTravel::Engine.routes.draw do
   resource :contact
 
   resource :password do
-    resource :reset, only: [:new, :create]
+    resources :resets
   end
 end

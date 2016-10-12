@@ -1,0 +1,11 @@
+<h3>New password</h3>
+<%= simple_form_for @password, url: password_path do |f| %>
+  <%= f.input :password, label: false, placeholder: "New password" %>
+  <%= f.input :password_confirmation, label: false,
+    placeholder: "Re-type your password" %>
+  <%= f.button :submit, "Save changes", class: "btn btn-primary" %>
+<% end %>
+
+<p class="custom_link">
+<%= link_to "Back home", new_session_path %>
+</p>
