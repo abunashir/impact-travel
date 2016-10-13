@@ -1,4 +1,6 @@
 ImpactTravel::Engine.routes.draw do
+  root "landings#show"
+
   resource :landing
   resources :sessions
   resource :home
