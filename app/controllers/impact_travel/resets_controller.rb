@@ -1,5 +1,7 @@
 module ImpactTravel
   class ResetsController < ApplicationController
+    layout "impact_travel/login"
+
     def show
       validated_password_reset || redirect_to(
         new_session_path, notice: I18n.t("password_reset.invalid_token")
