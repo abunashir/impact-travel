@@ -1,0 +1,38 @@
+<% supplementaries = @supplementaries %>
+
+<h4>Friends & Family</h4>
+<%= render "flashes" %>
+
+<div class="account_holder">
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Status</th>
+    </tr>
+    <% if supplementaries.count > 0  %>
+      <% supplementaries.each do |supplementary| %>
+        <tr>
+          <td><%= supplementary.name %></td>
+          <td> <%= supplementary.email %></td>
+          <td> <%= supplementary.phone %></td>
+          <td><span class="capitalize"><%= supplementary.status %></span></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="4">
+          You currently do not have any supplementary subscribers, you can add
+          them by clicking on the "add new supplementary" button below.
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <p>
+  <%= link_to "Add new supplementary", new_supplementary_path,
+    class: "btn btn-primary" %>
+  </p>
+</div>
+
