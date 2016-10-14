@@ -1,0 +1,10 @@
+<div class="account_holder">
+  <%= simple_form_for @supplementary, url: supplementaries_path,
+    html: {class: "travelia_form" } do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.button :submit, "Save supplementary", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -71,4 +71,11 @@ FactoryGirl.define do
   factory :password_reset, class: ImpactTravel::PasswordReset do
     email "john.doe@example.com"
   end
+
+  factory :supplementary, class: ImpactTravel::Supplementary do
+    phone "+1 123 234 456 7890"
+    email "supplementary@example.com"
+    first_name "Mrs."
+    last_name "Doe"
+  end
 end

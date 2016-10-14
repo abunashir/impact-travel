@@ -36,3 +36,8 @@ en:
   password_reset:
     invalid: "Does not seems to be a valid subscirber email"
     invalid_token: "Your reset token might have been expired!"
+
+  supplementary:
+    created: "An activation email has been sent to the supplementary, please ask
+      them to follow the instruction on the email"
+    invalid: "You need to provided all the fields to add a supplementary"
