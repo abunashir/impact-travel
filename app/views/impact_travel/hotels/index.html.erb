@@ -1,0 +1,79 @@
+<div class="section-title-01">
+  <div class="bg_parallax image_02_parallax"></div>
+
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1><%= @page_title %></h1>
+      <div class="crumbs">
+        <ul>
+          <li><%= @page_subtitle.html_safe %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="content-central">
+  <div class="semiboxshadow text-center">
+    <%= image_tag "impact_travel/result-bg.png", class: "img-responsive" %>
+  </div>
+
+  <div class="content_info">
+    <div class="paddings-mini">
+      <div class="container">
+        <div class="portfolioFilter">
+          <a href="#" data-filter="*" class="current">Show All</a>
+        </div>
+
+        <div class="row portfolioContainer">
+          <% @providers.each do |provider| %>
+            <div class="col-xs-12 col-sm-6 col-md-4 <%= provider.categories %>">
+              <div class="img-hover">
+                <%= image_tag(
+                  provider.image,
+                  class: "img-responsive provider_image"
+                ) %>
+
+                <div class="overlay">
+                  <a href="<%= provider.image %>" class="fancybox">
+                    <i class="fa fa-plus-circle"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="info-gallery">
+                <h3><%= provider.name %></h3>
+                <hr class="separator">
+                <p><%= provider.description.html_safe %></p><br />
+
+                <%-
+                  link_target = "_self"
+                  provider_link = ["", controller_name, provider.slug].join("/")
+
+                  unless provider.frameable == true
+                    link_target = "_blank"
+                    provider_link = provider.link
+                  end
+                %>
+
+                <div class="content-btn">
+                  <% if provider.postable == true %>
+                    <%= form_for :postable, url: provider.link do |f| %>
+                    <%= f.submit "Browse now", class: "btn btn-primary" %>
+                    <% end %>
+
+                  <% else %>
+                    <%= link_to "Browse now",
+                      provider_link,
+                      class: "btn btn-primary", target: link_target %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

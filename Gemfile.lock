@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/discountnetwork/discountnetwork-ruby.git
-  revision: dd8dd3fcb37639a8b2dc69caea582431da5a996f
-  ref: dd8dd3f
+  revision: 39770dc09a76f12778469c00033a1a89152886a1
+  ref: 39770dc
   specs:
     discountnetwork (0.0.1)
       rest-client (~> 1.8)
