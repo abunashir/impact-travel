@@ -23,6 +23,7 @@ RSpec.configure do |config|
   # Support Helpers
   config.include Feature::AuthenticationHelpers
   config.include SignInHelpers
+  config.include ProviderHelpers
 end
 
 def restore_configuration_to_default
