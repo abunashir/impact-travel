@@ -10,7 +10,7 @@ Climate](https://codeclimate.com/github/impactservices/impact-travel/badges/gpa.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "impact-travel", github: "abunashir/impact-travel"
+gem "impact_travel", github: "abunashir/impact-travel"
 ```
 
 And then execute:
