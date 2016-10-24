@@ -12,6 +12,10 @@ module ImpactTravel
       @site_title ||= ImpactTravel.configuration.title
     end
 
+    def site_stylesheet
+      @site_stylesheet ||= ImpactTravel.configuration.stylesheet
+    end
+
     def site_keywords
       @site_keywords ||= ImpactTravel.configuration.keywords
     end

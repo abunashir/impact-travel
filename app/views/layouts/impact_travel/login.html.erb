@@ -12,6 +12,10 @@
     <%= favicon_link_tag("favicon.png", rel: "icon", type: "image/png") %>
     <%= stylesheet_link_tag "impact_travel/application" %>
     <%= stylesheet_link_tag "impact_travel/login" %>
+
+    <% unless site_stylesheet.nil? %>
+      <%= stylesheet_link_tag(site_stylesheet) %>
+    <% end %>
   </head>
 
   <body>

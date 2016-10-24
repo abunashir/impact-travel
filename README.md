@@ -34,6 +34,7 @@ ImpactTravel.configure do |config|
   config.title = "Application Name / Title"
   config.abbreviation = "Application abbreviation"
   config.phone = "Contact Number for the app"
+  config.stylesheet = "custom.stylesheet"
 
   # Search engine meta attributes
   config.keywords = "Keywords for meta attribute"

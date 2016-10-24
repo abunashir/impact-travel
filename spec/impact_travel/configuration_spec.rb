@@ -22,6 +22,7 @@ describe ImpactTravel::Configuration do
       site_keywords = "travel, discount"
       site_description = "Travel the world in cheapest price"
       site_author = "Impact Services"
+      site_stylesheet = "custom"
 
       ImpactTravel.configure do |config|
         config.logo = site_logo
@@ -31,6 +32,7 @@ describe ImpactTravel::Configuration do
         config.description = site_description
         config.author = site_author
         config.phone = site_contact
+        config.stylesheet = site_stylesheet
       end
 
       configuration = ImpactTravel.configuration
@@ -40,6 +42,7 @@ describe ImpactTravel::Configuration do
       expect(configuration.phone).to eq(site_contact)
       expect(configuration.author).to eq(site_author)
       expect(configuration.keywords).to eq(site_keywords)
+      expect(configuration.stylesheet).to eq(site_stylesheet)
       expect(configuration.description).to eq(site_description)
       expect(configuration.abbreviation).to eq(site_abbreviation)
     end

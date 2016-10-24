@@ -5,6 +5,7 @@ ImpactTravel.configure do |config|
   config.phone = "+1 888 123 456 7890"
   config.abbreviation = "DN"
 
+  config.stylesheet = "custom.style"
   config.keywords = "Travel, Leisure, Discount, Tours, Cruises"
   config.description = "Best travel and leisure discount provider"
   config.author = "Impact Services"
