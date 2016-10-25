@@ -1,0 +1,27 @@
+en:
+  impact_travel:
+    providers:
+      browse_button: "Browse now"
+
+      resort:
+        title: "Condos"
+        subtitle: "Access to resorts worldwide... no commitment"
+
+      package:
+        title: "Packages"
+        subtitle:
+          "Please browse these public sites, then call in to book and get
+          your discount."
+
+      cruise:
+        title: "Cruises"
+        subtitle: "Browse these public sites and call us to get your discount"
+
+      tour:
+        title: "Tours"
+        subtitle: "Browse these public sites and call us to get your discount"
+
+      car:
+        title: "Cars"
+        subtitle: "Browse these car listings and call us for your discount"
+

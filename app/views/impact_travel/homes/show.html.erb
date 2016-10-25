@@ -1,61 +1,35 @@
-<% content = OpenStruct.new %>
-<!-- Slide And Filter Section-->
 <section class="tp-banner-container">
-  <!-- SLIDE  -->
   <div class="tp-banner" >
-    <!-- SLIDES CONTENT-->
     <ul>
-
       <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-        <!-- MAIN IMAGE -->
-        <img src="<%= asset_path "#{app_theme}/slide-1.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
-        <!-- LAYERS -->
-      </li>
-
-      <!-- SLIDE  -->
-      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-        <!-- MAIN IMAGE -->
-        <img src="<%= asset_path "#{app_theme}/slide-2.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
-        <!-- LAYERS -->
+        <img src="<%= asset_path("impact_travel/slide-1.jpg")  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
       </li>
 
       <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-        <!-- MAIN IMAGE -->
-        <img src="<%= asset_path "#{app_theme}/slide-3.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
-        <!-- LAYERS -->
+        <img src="<%= asset_path("impact_travel/slide-2.jpg")  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
       </li>
 
-
-
-      <!-- SLIDE  -->
       <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-        <!-- MAIN IMAGE -->
-        <img src="<%= asset_path "#{app_theme}/slide-4.jpg"  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
-        <!-- LAYERS -->
+        <img src="<%= asset_path("impact_travel/slide-3.jpg") %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
       </li>
 
-      <!-- SLIDE  -->
       <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-        <!-- MAIN IMAGE -->
-        <img src="<%= asset_path("#{app_theme}/slide-6.jpg")  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
-        <!-- LAYERS -->
+        <img src="<%= asset_path("impact_travel/slide-4.jpg") %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
+      </li>
+
+      <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+        <img src="<%= asset_path("impact_travel/slide-6.jpg")  %>"  alt="fullslide1" data-bgposition="left center" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
       </li>
     </ul> 
-    <!-- END SLIDES  -->
     <div class="tp-bannertimer"></div>
   </div>
-  <!-- SLIDE CONTENT-->
 
-  <!-- FILTER HEADER - TITLE HEADER-->
   <div class="filter-title">
-    <!-- TITLE HEADER-->
     <div class="title-header">
-      <h1><%= content.hero_title %></h1>
-      <p class="lead"><%= content.hero_html %></p>
+      <h1><%= I18n.t("impact_travel.home.hero_title") %></h1>
+      <p class="lead"><%= I18n.t("impact_travel.home.hero_html").html_safe %></p>
     </div>
-    <!-- END TITLE HEADER-->
 
-    <!-- FILTER HEADER-->
     <div class="filter-header">
       <%= simple_form_for @search do |f| %>
         <%= f.input :location_id, as: :hidden %>
@@ -78,39 +52,29 @@
         <%= f.submit "Search" %>
       <% end %>
     </div>
-    <!-- END FILTER HEADER-->
   </div>
-  <!-- END FILTERHEADER - TITLE HEADER -->
 </section>
-<!-- End Slide And Filter Section-->
 
-<!--Content Central -->
 <section class="content-central">
-  <!-- Shadow Semiboxed Layout -->
   <div class="semiboxshadow text-center">
-    <%= image_tag "impact_travel/shp.png", class: 'img-responsive' %>
+    <%= image_tag("impact_travel/shp.png", class: "img-responsive")%>
   </div>
-  <!-- End Shadow Semiboxed Layout -->
 
-  <!-- End content info - Vacations Destinatios-->
   <div class="content_info">
     <div class="content_resalt">
       <div class="container">
         <div class="row">
-          <!-- Info Resalt - Info Services -->
           <div class="col-md-4 ">
             <div class="services-lines-info">
-              <h2><%= content.welcome_title %></h2>
+              <h2><%= I18n.t("impact_travel.home.welcome_title") %></h2>
               <p class="lead">
-              <%= content.welcome_sub %>
-              <span class="line"></span>
+                <%= I18n.t("impact_travel.home.welcome_subtitle") %>
+                <span class="line"></span>
               </p>
-              <p><%= content.welcome_html %></p>
+              <p><%= I18n.t("impact_travel.home.welcome_html").html_safe %></p>
             </div>
           </div>
-          <!-- End Info Resalt - Info Services --> 
 
-          <!-- Services Items -->
           <div class="col-md-8">
             <ul class="services-lines">
               <li>
@@ -179,29 +143,21 @@
               </li>
             </ul>
           </div> 
-          <!-- End Services Items --> 
         </div>
       </div>
     </div>
   </div>
-  <!-- End content info - Vacations Destinatios--> 
 
-  <!-- content info - contact support -->
   <%= render "contact_info" %>
-  <!-- content info - contact support end -->
 
-  <!-- End content info - Features-->
   <div class="content_info">
-    <!-- Title -->
     <div class="container">
       <div class="row">
         <div class="titles">
           <h2>Why <span>Book</span> with <%= site_abbreviation %><span>?</span></h2> <i class="fa fa-plane"></i> <hr class="tall"> </div>
       </div>
     </div>
-    <!-- End Title-->
 
-    <!-- content-->
     <div class="container">
       <div class="row padding-bottom">
         <div class="col-md-4">
@@ -261,18 +217,12 @@
         </div>
       </div>
     </div>
-    <!-- End content-->
-  </div>   
-  <!-- End content info - Features--> 
+  </div>
 
-  <!-- content info - testimonials-->
   <div class="content_info">
-    <!-- Parallax Background -->
     <div class="bg_parallax image_02_parallax"></div>
-    <!-- Parallax Background -->
 
     <div class="opacy_bg_02">
-      <!-- Testimonial Propertie-->
       <div class="container">
         <div class="row">
           <div class="col-md-4">
@@ -282,7 +232,7 @@
                   <p><i class="fa fa-quote-left"></i>The hotel is stunning, super recommended. And the treatment of its people in very good, are always attentive to the little things.<i class="fa fa-quote-right"></i></p>
 
                   <div class="image-testimonials">
-                    <%= image_tag "#{app_theme}/experiences-1.jpg" %>
+                    <%= image_tag "impact_travel/experiences-1.jpg" %>
                   </div>
                   <h4>Jeniffer Martinez</h4>
                   <i class="fa fa-star"></i>
@@ -298,7 +248,7 @@
                   <i class="fa fa-quote-right"></i></p>
 
                   <div class="image-testimonials">
-                    <%= image_tag "#{app_theme}/experiences-2.jpg" %>
+                    <%= image_tag "impact_travel/experiences-2.jpg" %>
                   </div>
                   <h4>Juan Rendon</h4>
                   <i class="fa fa-star"></i>
@@ -313,7 +263,7 @@
                   This was our first time on a cruise, what a fantastic way to holiday! We will be back again next year.<i class="fa fa-quote-right"></i></p>
 
                   <div class="image-testimonials">
-                    <%= image_tag "#{app_theme}/experiences-3.jpg" %>
+                    <%= image_tag "impact_travel/experiences-3.jpg" %>
                   </div>
                   <h4>Allan and Jenny</h4>
                   <i class="fa fa-star"></i>
@@ -329,15 +279,13 @@
           <div class="col-md-8">
             <div class="testimonial-info">
               <h2>TESTIMONIALS</h2>
-              <p><%= raw content.testmonials_html %></p>
-              <!-- <a href="#" class="btn btn&#45;primary">View Details</a> -->
+              <p>
+                <%= I18n.t("impact_travel.home.testimonial_html").html_safe %>
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Testimonial Propertie-->
     </div>
   </div>
-  <!-- End content info - testimonials-->
 </section>
-<!-- End Content Central -->

@@ -59,13 +59,19 @@
                 <div class="content-btn">
                   <% if provider.postable == true %>
                     <%= form_for :postable, url: provider.link do |f| %>
-                    <%= f.submit "Browse now", class: "btn btn-primary" %>
+                      <%= f.submit(
+                        I18n.t("impact_travel.provider.browse_button"),
+                        class: "btn btn-primary"
+                      )%>
                     <% end %>
 
                   <% else %>
-                    <%= link_to "Browse now",
+                    <%= link_to(
+                      I18n.t("impact_travel.providers.browse_button"),
                       provider_link,
-                      class: "btn btn-primary", target: link_target %>
+                      class: "btn btn-primary",
+                      target: link_target
+                    ) %>
                   <% end %>
                 </div>
               </div>

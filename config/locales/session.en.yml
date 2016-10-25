@@ -1,0 +1,6 @@
+en:
+  impact_travel:
+    session:
+      form_title: "Login to your account"
+      forgot_link: "Forgot your password?"
+      submit_button: "Login"
