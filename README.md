@@ -40,6 +40,11 @@ ImpactTravel.configure do |config|
   config.keywords = "Keywords for meta attribute"
   config.description = "Description for meta attribute"
   config.author = "Author for meta attribute"
+
+  # Social media pages
+  config.facebook = "https://facebook.com/your-page"
+  config.twitter = "https://twitter.com/your-page"
+  config.instagram = "https://instagram.com/your-page"
 end
 ```
 

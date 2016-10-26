@@ -1,7 +1,8 @@
 module ImpactTravel
   class Configuration
     attr_accessor :api_key, :logo, :title, :abbreviation
-    attr_accessor :stylesheet, :keywords, :description, :author, :phone
+    attr_accessor :stylesheet, :keywords, :description, :author
+    attr_accessor :phone, :facebook, :twitter, :instagram
   end
 
   def self.configure

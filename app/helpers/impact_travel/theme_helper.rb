@@ -36,6 +36,14 @@ module ImpactTravel
       @site_abbreviation ||= ImpactTravel.configuration.abbreviation
     end
 
+    def social_links
+      @social_links ||= OpenStruct.new(
+        facebook: ImpactTravel.configuration.facebook,
+        twitter: ImpactTravel.configuration.twitter,
+        instagram: ImpactTravel.configuration.instagram,
+      )
+    end
+
     def font_awesome(icon_name)
       "<i class='fa #{icon_name}'></i>".html_safe
     end

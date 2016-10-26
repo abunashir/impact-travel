@@ -9,4 +9,6 @@ ImpactTravel.configure do |config|
   config.keywords = "Travel, Leisure, Discount, Tours, Cruises"
   config.description = "Best travel and leisure discount provider"
   config.author = "Impact Services"
+
+  config.facebook = "https://facebook.com/facebook"
 end

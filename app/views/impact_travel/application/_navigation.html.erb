@@ -16,8 +16,28 @@
 
 <li class="social-bar"> <a href="#">FOLLOW US</a>
   <ul class="drop-down hover-zoom">
-    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i> </a> </li>
-    <li><a href="#" target="_blank"><i class="fa fa-instagram"></i> </a> </li>
-    <li><a href="#" target="_blank"><i class="fa fa-facebook"></i> </a> </li>
+    <% if social_links.twitter %>
+      <li>
+        <a href="<%= social_links.twitter %>" target="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    <% end %>
+
+    <% if social_links.instagram %>
+      <li>
+        <a href="<%= social_links.instagram %>" target="_blank">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
+    <% end %>
+
+    <% if social_links.facebook %>
+      <li>
+        <a href="<%= social_links.facebook %>" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+    <% end %>
   </ul>
 </li>

@@ -47,4 +47,22 @@ describe ImpactTravel::Configuration do
       expect(configuration.abbreviation).to eq(site_abbreviation)
     end
   end
+
+  describe "social links" do
+    it "returns the social link configurations" do
+      facebook = "https://facebook.com/example-page"
+      twitter = "https://twitter.com/example-page"
+      instagram = "https://instagram.com/example-page"
+
+      ImpactTravel.configure do |config|
+        config.facebook = facebook
+        config.twitter = twitter
+        config.instagram = instagram
+      end
+
+      expect(ImpactTravel.configuration.facebook).to eq(facebook)
+      expect(ImpactTravel.configuration.twitter).to eq(twitter)
+      expect(ImpactTravel.configuration.instagram).to eq(instagram)
+    end
+  end
 end
