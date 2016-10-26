@@ -28,6 +28,7 @@ ImpactTravel::Engine.routes.draw do
 
   resources :supplementaries
   resource :contact
+  resource :about
 
   resource :password do
     resources :resets
