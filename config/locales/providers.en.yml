@@ -2,6 +2,13 @@ en:
   impact_travel:
     providers:
       browse_button: "Browse now"
+      book_now: "Book now"
+
+      hotel:
+        title: "Hotels"
+        subtitle:
+          "Hotels can be booked live online or by submitting a request
+          to our concierge team."
 
       resort:
         title: "Condos"
