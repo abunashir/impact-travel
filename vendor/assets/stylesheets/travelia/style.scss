@@ -839,15 +839,15 @@ hr.tall{
   border-right: 0;
 }
 .filter-header .input-large{
-  width: 35%;
   background: #fff asset-url("travelia/location.png") no-repeat scroll left 6px;
   padding-left: 40px;
+  width: 40%;
 }
 .filter-header .date-input{
-  width: 17%;
   background: #fff asset-url("travelia/calendar.png") no-repeat scroll right 12px;
-  padding-right: 10px;
   font-size: 0.9rem;
+  padding-right: 10px;
+  width: 22%;
 }
 .filter-header .selector{
   position: relative;

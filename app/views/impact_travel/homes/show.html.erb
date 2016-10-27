@@ -42,13 +42,6 @@
         <%= f.input :check_out, placeholder: "Check Out", label: false,
           input_html: {class: "date-input"} %>
 
-        <div class="selector">
-          <%= f.input :guests, as: :select, collection: guests_collection,
-            prompt: false, label: false, selected: 2,
-            input_html: {class: "guests-input"} %>
-          <span class="custom-select">Guests</span>
-        </div>
-
         <%= f.submit "Search" %>
       <% end %>
     </div>

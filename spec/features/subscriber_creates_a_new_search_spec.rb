@@ -11,7 +11,6 @@ feature "New Search" do
     fill_in "search_destination", with: search.destination
     fill_in "search_check_in", with: search.check_in
     fill_in "search_check_out", with: search.check_out
-    select "2 Guests", from: "search_guests"
     find("input#search_location_id", visible: false).set(
       search.location_id,
     )

@@ -9,7 +9,7 @@ module ImpactTravel
         location_name: destination,
         check_in: check_in,
         check_out: check_out,
-        adults: guests,
+        adults: guests || 2,
       }
     end
 
