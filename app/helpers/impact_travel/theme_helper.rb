@@ -47,5 +47,13 @@ module ImpactTravel
     def font_awesome(icon_name)
       "<i class='fa #{icon_name}'></i>".html_safe
     end
+
+    def impact_t(*args)
+      I18n.t(args.unshift("impact_travel").join("."))
+    end
+
+    def testimonial_t(number, key)
+      impact_t("home", "testimonials", number, key)
+    end
   end
 end

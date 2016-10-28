@@ -16,13 +16,33 @@ en:
         long-awaited vacation. When you are not traveling you can still enjoy
         savings though our shopping partner."
 
-      testimonial_html:
-        "You can choose your favorite destination and start planning your
-        long-awaited vacation. We offer thousands of destinations and have
-        a wide variety of hotels so that you can host and enjoy your stay
-        without problems. <br /><br />
+      testimonials:
+        title: "TESTIMONIALS"
+        subtitle_html:
+          "You can choose your favorite destination and start planning your
+          long-awaited vacation. We offer thousands of destinations and have
+          a wide variety of hotels so that you can host and enjoy your stay
+          without problems. <br /><br />
 
-        Book your trip now, and once you return please send us an email to
-        let us know the highlights of your trip. If your experience is featured
-        on our site or in our newsletter we will give you one years subscription
-        as a thank you."
+          Book your trip now, and once you return please send us an email to
+          let us know the highlights of your trip. If your experience is
+          featured on our site or in our newsletter we will give you one years
+          subscription as a thank you."
+
+        one:
+          name: "John Doe"
+          image: "impact_travel/experiences-1.jpg"
+          content: "This is an amazing provider!"
+          stars: 5
+
+        two:
+          name: "John Smith"
+          image: "impact_travel/experiences-1.jpg"
+          content: "This is another amazing provider!"
+          stars: 5
+
+        three:
+          name: "Ms. Smith"
+          image: "impact_travel/experiences-1.jpg"
+          content: "What can I say about this, simple the best!"
+          stars: 5

@@ -1,0 +1,46 @@
+<div class="content_info">
+  <div class="bg_parallax image_02_parallax"></div>
+  <div class="opacy_bg_02">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="info-testimonial">
+            <ul id="testimonials">
+
+              <% ["one", "two", "three"].each do |number| %>
+                <li>
+                  <p>
+                  <i class="fa fa-quote-left"></i>
+                  <%= testimonial_t(number, "content") %>
+                  <i class="fa fa-quote-right"></i>
+                  </p>
+
+                  <div class="image-testimonials">
+                    <%= image_tag(testimonial_t(number, "image")) %>
+                  </div>
+
+                  <h4><%= testimonial_t(number, "name") %></h4>
+                  <% scores = testimonial_t(number, "stars").to_i %>
+
+                  <% scores.times do |start| %>
+                    <i class="fa fa-star"></i>
+                  <% end %>
+                </li>
+              <% end %>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <div class="testimonial-info">
+            <h2><%= impact_t("home", "testimonials", "title") %></h2>
+            <p>
+            <%= impact_t("home", "testimonials", "subtitle_html").html_safe %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
