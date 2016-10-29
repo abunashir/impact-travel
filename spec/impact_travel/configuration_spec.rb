@@ -65,4 +65,20 @@ describe ImpactTravel::Configuration do
       expect(ImpactTravel.configuration.instagram).to eq(instagram)
     end
   end
+
+  describe "hero sliders" do
+    it "returns the default when nothing is configured" do
+      expect(
+        ImpactTravel.configuration.slides.first,
+      ).to eq("impact_travel/slide.jpg")
+    end
+
+    it "returns the configured slider names" do
+      ImpactTravel.configure do |config|
+        config.slides = ["image-1.jpg", "image-2.jpg"]
+      end
+
+      expect(ImpactTravel.configuration.slides.first).to eq("image-1.jpg")
+    end
+  end
 end

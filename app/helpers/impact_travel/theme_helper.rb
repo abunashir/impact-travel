@@ -36,6 +36,10 @@ module ImpactTravel
       @site_abbreviation ||= ImpactTravel.configuration.abbreviation
     end
 
+    def home_slides
+      @home_slides ||= ImpactTravel.configuration.slides
+    end
+
     def social_links
       @social_links ||= OpenStruct.new(
         facebook: ImpactTravel.configuration.facebook,
