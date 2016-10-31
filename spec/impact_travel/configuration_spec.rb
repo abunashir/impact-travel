@@ -26,6 +26,7 @@ describe ImpactTravel::Configuration do
 
       ImpactTravel.configure do |config|
         config.logo = site_logo
+        config.logo_inverse = site_logo
         config.title = site_title
         config.abbreviation = site_abbreviation
         config.keywords = site_keywords
@@ -38,6 +39,7 @@ describe ImpactTravel::Configuration do
       configuration = ImpactTravel.configuration
 
       expect(configuration.logo).to eq(site_logo)
+      expect(configuration.logo_inverse).to eq(site_logo)
       expect(configuration.title).to eq(site_title)
       expect(configuration.phone).to eq(site_contact)
       expect(configuration.author).to eq(site_author)

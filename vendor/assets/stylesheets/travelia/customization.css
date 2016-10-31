@@ -11,6 +11,14 @@ img.navbar_logo.logo_sticky{
   display: none;
 }
 
+.sticky-wrapper.is-sticky img.navbar_logo{
+  display: none;
+}
+
+.sticky-wrapper.is-sticky img.navbar_logo.logo_sticky{
+  display: inline;
+}
+
 .title-header h1{
   text-transform: uppercase;
 }

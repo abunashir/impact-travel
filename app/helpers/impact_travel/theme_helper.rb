@@ -8,6 +8,10 @@ module ImpactTravel
       @site_logo ||= ImpactTravel.configuration.logo
     end
 
+    def site_sticky_logo
+      @site_sticky_logo ||= ImpactTravel.configuration.logo_inverse || site_logo
+    end
+
     def site_title
       @site_title ||= ImpactTravel.configuration.title
     end

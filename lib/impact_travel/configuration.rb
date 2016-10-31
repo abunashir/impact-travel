@@ -1,8 +1,8 @@
 module ImpactTravel
   class Configuration
-    attr_accessor :api_key, :logo, :title, :abbreviation
-    attr_accessor :stylesheet, :keywords, :description, :author
-    attr_accessor :phone, :facebook, :twitter, :instagram, :slides
+    attr_accessor :api_key, :logo, :logo_inverse, :title, :abbreviation
+    attr_accessor :stylesheet, :keywords, :description, :author, :phone
+    attr_accessor :facebook, :twitter, :instagram, :slides
 
     def initialize
       @slides ||= ["impact_travel/slide.jpg"]
