@@ -17,18 +17,19 @@ en:
       package:
         title: "Packages"
         subtitle:
-          "Please browse these public sites, then call in to book and get
-          your discount."
+          "Browse these public sites and contact us to get your discount"
 
       cruise:
         title: "Cruises"
-        subtitle: "Browse these public sites and call us to get your discount"
+        subtitle:
+          "Browse these public sites and contact us to get your discount"
 
       tour:
         title: "Tours"
-        subtitle: "Browse these public sites and call us to get your discount"
+        subtitle:
+          "Browse these public sites and contact us to get your discount"
 
       car:
         title: "Cars"
-        subtitle: "Browse these car listings and call us for your discount"
-
+        subtitle:
+          "Browse these public sites and contact us to get your discount"
