@@ -1,5 +1,5 @@
 module ImpactTravel
-  class LandingsController < ApplicationController
+  class LandingsController < ImpactTravel::ApplicationController
     before_action :redirect_logged_in_subscriber
 
     def show

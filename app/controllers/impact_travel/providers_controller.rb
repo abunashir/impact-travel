@@ -1,5 +1,5 @@
 module ImpactTravel
-  class ProvidersController < ApplicationController
+  class ProvidersController < ImpactTravel::ApplicationController
     before_action :require_login
 
     def index

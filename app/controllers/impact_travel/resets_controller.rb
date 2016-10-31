@@ -1,5 +1,5 @@
 module ImpactTravel
-  class ResetsController < ApplicationController
+  class ResetsController < ImpactTravel::ApplicationController
     layout "impact_travel/login"
 
     def show

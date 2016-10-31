@@ -1,5 +1,5 @@
 module ImpactTravel
-  class HomesController < ApplicationController
+  class HomesController < ImpactTravel::ApplicationController
     before_action :require_login
 
     def show

@@ -1,5 +1,5 @@
 module ImpactTravel
-  class SessionsController < ApplicationController
+  class SessionsController < ImpactTravel::ApplicationController
     layout "impact_travel/login"
     before_action :redirect_logged_in_subscriber, except: [:destroy]
 

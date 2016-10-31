@@ -1,5 +1,5 @@
 module ImpactTravel
-  class AccountsController < ApplicationController
+  class AccountsController < ImpactTravel::ApplicationController
     before_action :require_login
     before_action :set_auth_token
 

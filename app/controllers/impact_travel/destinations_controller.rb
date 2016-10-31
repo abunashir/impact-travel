@@ -1,5 +1,5 @@
 module ImpactTravel
-  class DestinationsController < ApplicationController
+  class DestinationsController < ImpactTravel::ApplicationController
     def index
       render json: similar_destinations
     end

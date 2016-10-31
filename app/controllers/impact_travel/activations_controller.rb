@@ -1,5 +1,5 @@
 module ImpactTravel
-  class ActivationsController < ApplicationController
+  class ActivationsController < ImpactTravel::ApplicationController
     def show
       set_activation_session(activation_token)
       redirect_to(new_account_activation_path)

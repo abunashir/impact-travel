@@ -1,5 +1,5 @@
 module ImpactTravel
-  class PasswordsController < ApplicationController
+  class PasswordsController < ImpactTravel::ApplicationController
     before_action :require_login, except: [:new, :create]
     before_action :set_auth_token, except: [:new, :create]
     layout "impact_travel/login", only: [:new, :create]

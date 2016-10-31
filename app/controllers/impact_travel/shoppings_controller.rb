@@ -1,5 +1,5 @@
 module ImpactTravel
-  class ShoppingsController < ApplicationController
+  class ShoppingsController < ImpactTravel::ApplicationController
     before_action :require_login
 
     def show
