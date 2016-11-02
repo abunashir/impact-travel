@@ -1,6 +1,7 @@
 module ImpactTravel
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    before_action :set_locale
     helper_method :logged_in?
 
     def require_login
@@ -40,6 +41,10 @@ module ImpactTravel
       if logged_in?
         redirect_to(home_path)
       end
+    end
+
+    def set_locale
+      I18n.locale = I18n.default_locale
     end
   end
 end
