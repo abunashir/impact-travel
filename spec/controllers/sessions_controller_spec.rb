@@ -11,7 +11,7 @@ describe ImpactTravel::SessionsController do
         post :create, login: login_params(subscriber)
 
         expect(response).to redirect_to(home_path)
-        expect(flash.notice).to eq(I18n.t("sessions.created"))
+        expect(flash.notice).to eq(I18n.t("session.created"))
       end
     end
 
@@ -22,7 +22,7 @@ describe ImpactTravel::SessionsController do
         post :create, login: login_params(subscriber)
 
         expect(response).to redirect_to(new_session_path)
-        expect(flash.notice).to eq(I18n.t("sessions.invalid"))
+        expect(flash.notice).to eq(I18n.t("session.invalid"))
       end
     end
   end

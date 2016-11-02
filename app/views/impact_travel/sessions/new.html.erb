@@ -3,7 +3,7 @@
   <p class="alert alert-info"><%= msg %></p>
 <% end %>
 
-<%= simple_form_for :login, url: sessions_path do |form| %>
+<%= simple_form_for :login, url: session_path do |form| %>
   <%= form.input :name, label: false, placeholder: "Email or Username" %>
   <%= form.input :password, label: false, placeholder: "Password" %>
   <%= form.button(

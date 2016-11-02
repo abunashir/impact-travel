@@ -1,5 +1,5 @@
 en:
-  sessions:
+  session:
     created: "You are logged in successfully!"
     destroyed: "You are logged out successfully!"
     invalid: "Please re-check your login credentials"
