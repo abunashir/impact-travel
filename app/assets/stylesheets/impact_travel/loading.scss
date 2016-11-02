@@ -7,6 +7,12 @@ body {
   font-weight: 400;
   margin: 0px;
   padding: 0px;
+
+  &.loading-layout {
+    .loading-background {
+      background-image: asset-url("impact_travel/loading.jpg");
+    }
+  }
 }
 .mb5 {
   margin-bottom: 5px;
