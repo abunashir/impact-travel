@@ -29,12 +29,13 @@
                   <div class="spinner-clock-minute"></div>
                 </div>
 
-                <div class="main-content">
+                <div class="main-content loading-content">
                   <%= yield %>
                 </div>
 
-                <!-- <p class="text&#45;bigger">
-                  it will take a couple of seconds</p> -->
+                <p class="text-bigger loading-content">
+                <%= I18n.t("search.loading_html").html_safe %>
+                </p>
               </div>
             </div>
           </div>

@@ -13,6 +13,12 @@ en:
       errors: "There are some errors creating your search"
       success: "Successfully created!, we are working on results"
 
+    loading_html:
+      "Please note, prices shown in this search are estimated prices based on
+      double occupancy in one room. Final prices are normally cheaper than what
+      is shown. To obtain the final price and book your stay please contact the
+      concierge services."
+
   booking:
     invalid: "Does not seams to be a valid booking id"
     confirmation:
