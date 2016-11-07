@@ -58,10 +58,10 @@ module ImpactTravel
 
     def booking_params
       params.require(:booking).permit(
-        :hotel_name, :hotel_price, :promo_rate, :hotel_score,
-        :hotel_total_reviews, :hotel_description, :hotel_currency,
-        :first_name, :last_name, :email, :phone, :address, :city,
-        :zip, :country, :special_request
+        :hotel_id, :hotel_name, :hotel_price, :promo_rate,
+        :hotel_score, :hotel_total_reviews, :hotel_description,
+        :hotel_currency, :first_name, :last_name, :email, :phone,
+        :address, :city, :zip, :country, :special_request
       )
     end
   end
