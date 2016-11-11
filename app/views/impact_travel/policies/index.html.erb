@@ -1,0 +1,27 @@
+<div class="section-title-01">
+  <div class="bg_parallax image_02_parallax"></div>
+  <div class="opacy_bg_02">
+    <div class="container">
+      <h1><%= @header_title %></h1>
+      <div class="crumbs">
+        <ul>
+          <li><%= raw("&nbsp;" * 60) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="content-central">
+  <div class="semiboxshadow text-center">
+    <%= image_tag("impact_travel/result-bg.png", class: "img-responsive") %>
+  </div>
+
+  <div class="content_info">
+    <div class="paddings-mini">
+      <div class="container about_us content_page">
+        <%= render(partial: "content") %>
+      </div>
+    </div>
+  </div>
+</section>

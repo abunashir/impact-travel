@@ -33,4 +33,8 @@ ImpactTravel::Engine.routes.draw do
   resource :password do
     resources :resets
   end
+
+  resources :policies, :terms, only: :index
+  resource :price_guarantee, :cancellation, :privacy, only: :show
+  resource :reservation_gurantee, :refund, only: :show
 end
