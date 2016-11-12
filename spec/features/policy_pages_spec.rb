@@ -26,4 +26,14 @@ feature "Polcy pages" do
     expect(page).to have_content("Submitting a Claim")
     expect(page).to have_content("Best Price Guarantee")
   end
+
+  scenario "reservation guarantee page" do
+    login_with_valid_credentials
+
+    click_on "Terms of Use"
+    click_on "Reservation Guarantee"
+
+    expect(page).to have_content("Reservation Guarantee")
+    expect(page).to have_content("Reservations secured via")
+  end
 end
