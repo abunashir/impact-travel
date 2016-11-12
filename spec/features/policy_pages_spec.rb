@@ -46,4 +46,14 @@ feature "Polcy pages" do
     expect(page).to have_content("Cancellation Policy")
     expect(page).to have_content("Any cancellations received after")
   end
+
+  scenario "privacy policy page" do
+    login_with_valid_credentials
+
+    click_on "Policies"
+    click_on "Privacy Policy"
+
+    expect(page).to have_content("Privacy Policy")
+    expect(page).to have_content("Our Policy Concerning Cookies")
+  end
 end

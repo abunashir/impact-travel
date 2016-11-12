@@ -16,6 +16,10 @@ module ImpactTravel
       @site_title ||= ImpactTravel.configuration.title
     end
 
+    def site_domain
+      @site_domain ||= "example.com"
+    end
+
     def site_stylesheet
       @site_stylesheet ||= ImpactTravel.configuration.stylesheet
     end
