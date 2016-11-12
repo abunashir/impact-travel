@@ -36,4 +36,14 @@ feature "Polcy pages" do
     expect(page).to have_content("Reservation Guarantee")
     expect(page).to have_content("Reservations secured via")
   end
+
+  scenario "cancellation policy page" do
+    login_with_valid_credentials
+
+    click_on "Policies"
+    click_on "Cancellation Policy"
+
+    expect(page).to have_content("Cancellation Policy")
+    expect(page).to have_content("Any cancellations received after")
+  end
 end
