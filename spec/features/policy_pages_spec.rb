@@ -56,4 +56,14 @@ feature "Polcy pages" do
     expect(page).to have_content("Privacy Policy")
     expect(page).to have_content("Our Policy Concerning Cookies")
   end
+
+  scenario "refund policy page" do
+    login_with_valid_credentials
+
+    click_on "Policies"
+    click_on "Refund Policy"
+
+    expect(page).to have_content("Refund Policy")
+    expect(page).to have_content("To request a refund")
+  end
 end
