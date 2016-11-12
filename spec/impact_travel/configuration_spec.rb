@@ -83,4 +83,16 @@ describe ImpactTravel::Configuration do
       expect(ImpactTravel.configuration.slides.first).to eq("image-1.jpg")
     end
   end
+
+  describe "white label specific configuration" do
+    it "allows developer to configure the white label" do
+      site_domain = "example.com"
+
+      ImpactTravel.configure do |config|
+        config.domain = site_domain
+      end
+
+      expect(ImpactTravel.configuration.domain).to eq(site_domain)
+    end
+  end
 end

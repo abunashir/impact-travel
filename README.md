@@ -32,6 +32,7 @@ ImpactTravel.configure do |config|
   config.logo_inverse = "logo-inverse.png"
 
   # Application attributes
+  config.domain = "example.com"
   config.title = "Application Name / Title"
   config.abbreviation = "Application abbreviation"
   config.phone = "Contact Number for the app"

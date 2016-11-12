@@ -1,10 +1,11 @@
 <h3><%= site_abbreviation %> Refund Policy</h3>
 <p>To request a refund, please contact us at any of the following:</p>
 <ul>
-  <li>On our website <a href="https://www.<%= site_domain %>">
-      https://www.<%= site_domain %>
-  </a></li>
-  <li>By e-mail to <a href='mailto:info@<%= site_domain %>'>info@<%= site_domain %></a></li>
+  <li>On our website <%= link_to(site_secure_url, site_secure_url)  %></a></li>
+  <li>
+    By e-mail to
+    <a href="mailto:<%= site_info_email %>"><%= site_info_email %></a>
+  </li>
   <li><%= site_abbreviation %> is committed to providing you with a simple and efficient refund process. Please note that shortening your stay during the high season, periods of high occupancy, during trade fairs and conventions, or failure to cancel your reservation prior to the due date noted on your confirmation may result in a penalty charge being imposed by the hotel. If a penalty charge is incurred, this will be deducted from the amount refunded.</li>
 
   <li>Your confirmation email will specify the exact cancellation due date which is the deadline you must cancel by in order to avoid any cancellation fee. Generally, the cancellation due date is 14 days prior to arrival at the hotel. The penalty charge is usually one-night stay, unless specified on the confirmation email.</li>

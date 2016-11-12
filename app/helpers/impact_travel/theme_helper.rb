@@ -17,7 +17,19 @@ module ImpactTravel
     end
 
     def site_domain
-      @site_domain ||= "example.com"
+      @site_domain ||= ImpactTravel.configuration.domain
+    end
+
+    def site_url
+      @site_url ||= ["www", site_domain].join(".")
+    end
+
+    def site_secure_url
+      @site_secure_url ||= ["https", site_url].join("://")
+    end
+
+    def site_info_email
+      @site_info_email ||= ["info", site_domain].join("@")
     end
 
     def site_stylesheet
