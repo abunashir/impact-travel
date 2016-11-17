@@ -45,7 +45,7 @@
 
     <%= javascript_tag do %>
       setTimeout(function(){
-      window.location.href = "<%= search_results_path(@search.id) %>";
+       window.location.href = "<%= search_results_path(@search.id) %>";
       }, 12000);
     <% end %>
   </body>
