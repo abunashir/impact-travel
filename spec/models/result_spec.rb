@@ -11,6 +11,22 @@ describe ImpactTravel::Result do
       expect(results.search.id).not_to be_nil
       expect(results.hotels.first.name).not_to be_nil
     end
+
+    it "filter the resutls when options are passed" do
+      search = build_search_with_id
+      search_params = {
+        sort: "price",
+        order: "desc",
+        search_id: search.search_id,
+      }
+
+      stub_search_results_api(search_params)
+      results = ImpactTravel::Result.where(search_params)
+
+      expect(results.current_page).to eq(1)
+      expect(results.search.id).not_to be_nil
+      expect(results.hotels.first.name).not_to be_nil
+    end
   end
 
   describe ".find_by" do

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/discountnetwork/discountnetwork-ruby.git
+  revision: 403b21ca4a372b416b4b1a4c4e7b7ae159f38fa1
+  ref: 403b21c
+  specs:
+    discountnetwork (0.1.0)
+      rest-client (~> 1.8)
+
 PATH
   remote: .
   specs:
@@ -84,9 +92,7 @@ GEM
       safe_yaml (~> 1.0.0)
     currencies (0.4.2)
     diff-lcs (1.2.5)
-    discountnetwork (0.1.0)
-      rest-client (~> 1.8)
-    domain_name (0.5.20161021)
+    domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -211,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   capybara
+  discountnetwork!
   factory_girl
   impact_travel!
   rspec-rails

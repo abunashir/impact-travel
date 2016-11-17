@@ -31,6 +31,23 @@ describe ImpactTravel::ResultsController do
         expect(flash.notice).to eq(I18n.t("search.invalid"))
       end
     end
+
+    context "with specified sort order" do
+      it "shows the sorted search results" do
+        sign_in_as_subscriber
+        search_params = {
+          sort: "price",
+          order: "desc",
+          search_id: 123_456_789,
+        }
+
+        stub_search_results_api(search_params)
+        get(:index, **search_params)
+
+        expect(response.status).to eq(200)
+        expect(response).to render_template(:index)
+      end
+    end
   end
 
   describe "#show" do

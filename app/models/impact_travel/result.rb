@@ -2,8 +2,10 @@ module ImpactTravel
   class Result < ImpactTravel::Base
     attr_accessor :search_id, :hotel_id
 
-    def all
-      DiscountNetwork::Result.where(search_id: search_id)
+    def all(**attributes)
+      DiscountNetwork::Result.where(
+        attributes.merge(search_id: search_id).compact,
+      )
     rescue RestClient::UnprocessableEntity
     end
 
@@ -12,8 +14,8 @@ module ImpactTravel
     rescue RestClient::Unauthorized
     end
 
-    def self.where(search_id:)
-      new(search_id: search_id).all
+    def self.where(search_id:, **attributes)
+      new(search_id: search_id).all(attributes)
     end
 
     def self.find_by(search_id:, hotel_id:)

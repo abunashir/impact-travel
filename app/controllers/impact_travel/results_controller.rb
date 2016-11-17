@@ -24,7 +24,11 @@ module ImpactTravel
     end
 
     def load_results
-      @results = Result.where(search_id: params[:search_id])
+      @results = Result.where(
+        sort: params[:sort],
+        order: params[:order],
+        search_id: params[:search_id],
+      )
     end
   end
 end
