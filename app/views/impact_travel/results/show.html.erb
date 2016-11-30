@@ -11,8 +11,10 @@
   <div id="single-carousel">
     <% hotel.images.each do |image| %>
       <div class="img-hover">
-        <% img = image.gsub('w_460', 'w_800').gsub('h_460', 'h_600') %>
-        <%= image_tag img, class: "img-responsive" %>
+        <% if image %>
+          <% img = image.gsub('w_460', 'w_800').gsub('h_460', 'h_600') %>
+          <%= image_tag img, class: "img-responsive" %>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -104,7 +106,7 @@
                   new_search_result_booking_path(search.id, hotel.id),
                   class: "btn"
                 ) %>
-              </li>
+            </li>
             </ul>
             <!-- End Nav Tabs-->
 
@@ -141,9 +143,9 @@
                   </div>
                   <p class="col-md-12">
                   <br /><br />
-                    <%= link_to "Back to results", search_results_path(search.id),
-                      class: "btn btn-primary" %>
-                  </p>
+                  <%= link_to "Back to results", search_results_path(search.id),
+                    class: "btn btn-primary" %>
+                </p>
                 </div>
               </div>
               <!-- end Tab One - Hotel -->
