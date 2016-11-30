@@ -177,6 +177,11 @@
                   <div class="img-hover hotel_image_thumb">
                     <% if hotel.image %>
                       <%= image_tag(hotel.image, class: "img-responsive") %>
+                    <% else %>
+                      <%= image_tag(
+                        "impact_travel/hotel-sample.jpg",
+                        class: "img-responsive"
+                      ) %>
                     <% end %>
                     <div class="overlay">
                       <a href="#"><i class="fa fa-plus-circle"></i></a>
