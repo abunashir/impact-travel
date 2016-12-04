@@ -4,11 +4,11 @@ module ImpactTravel
     before_action :set_auth_token
 
     def show
-      find_subscriber || redirect_to_sign_path
+      find_subscriber || redirect_to_sign_in_path
     end
 
     def edit
-      build_account || redirect_to_sign_path
+      build_account || redirect_to_sign_in_path
     end
 
     def update
@@ -47,7 +47,7 @@ module ImpactTravel
       @subscriber = ImpactTravel::Subscriber.new(account_params)
     end
 
-    def redirect_to_sign_path
+    def redirect_to_sign_in_path
       destroy_user_sessions
       redirect_to(new_session_path, notice: I18n.t("account.invalid"))
     end
