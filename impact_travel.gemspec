@@ -25,8 +25,9 @@ Gem::Specification.new do |s|
   s.add_dependency "simple_form", "~> 3.2.1"
   s.add_dependency "will_paginate", "~> 3.0.6"
 
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "shoulda-matchers", "~> 3.1"
   s.add_development_dependency "webmock", "~> 2.0"
 end

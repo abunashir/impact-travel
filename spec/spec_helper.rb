@@ -5,6 +5,7 @@ require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require "rspec/rails"
 require "discountnetwork/rspec"
 require "factory_girl"
+require "shoulda-matchers"
 
 Dir[ImpactTravel::Engine.root.join("spec/support/**/*.rb")].each do |file|
   require file
@@ -21,9 +22,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   # Support Helpers
-  config.include Feature::AuthenticationHelpers
   config.include SignInHelpers
   config.include ProviderHelpers
+  config.include Feature::AuthenticationHelpers
+  config.include Shoulda::Matchers::ActiveModel
 end
 
 def restore_configuration_to_default

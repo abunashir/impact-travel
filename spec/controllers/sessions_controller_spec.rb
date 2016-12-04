@@ -18,7 +18,6 @@ describe ImpactTravel::SessionsController do
     context "subscriber provides invalid credentials" do
       it "re render the login page" do
         subscriber = build(:login, name: nil)
-        stub_unauthorized_dn_api_reqeust("sessions")
         post :create, login: login_params(subscriber)
 
         expect(response).to redirect_to(new_session_path)

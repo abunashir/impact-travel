@@ -1,6 +1,11 @@
 require "spec_helper"
 
 describe ImpactTravel::Login do
+  describe ".validations" do
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :password }
+  end
+
   describe "#attributes" do
     it "returns the attributes as hash" do
       login = build(:login)
