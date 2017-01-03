@@ -19,11 +19,23 @@ And then execute:
 $ bundle install
 ```
 
+## Mount
+
+Once you have successfully installed the underlying dependencies then you can
+mount the engine simply by editing your `config/routes.rb`
+
+```ruby
+Rails.application.routes.draw do
+  mount ImpactTravel::Engine => "/[PATH_YOU_WANNA_MOUNT_IT_TO]"
+end
+```
+
 ## Configure
 
-Impact Travel Engine provides you an easier way to configure it's underlying
-dependencies. Once you have the required credentials then you can add an
-initializer to set up your configuration.
+Once you have mounted the engine then it expects you to configure it properly,
+like setting up the `domain`, `logo`, `title`, `phone` to customizing it's
+internal behavior with underlying dependencies. You can provide these as a
+configuration by simply adding an initializer file in your application.
 
 ```ruby
 ImpactTravel.configure do |config|
@@ -50,6 +62,37 @@ ImpactTravel.configure do |config|
   config.instagram = "https://instagram.com/your-page"
 end
 ```
+
+## Override Layouts
+
+By default, the engine ships with some predefined `layouts` that supports basic
+customization but if you wanna provide your own `layouts` for login, landing,
+loading or application page then all you need to do is add those layouts under
+the `impact_travel` namespace. They layout it supports are
+
+- Login - `app/views/layouts/impact_travel/login.html.erb`
+- Landing - `app/views/layouts/impact_travel/landing.html.erb`
+- Loading - `app/views/layouts/impact_travel/loading.html.erb`
+- Application - `app/views/layouts/impact_travel/application.html.erb`
+
+## Override Terms
+
+By default, it ships with the standard terms and conditions that is apply to all
+of the white label, but if you wanna add some customize terms then you can add
+those under each page of `impact_travel` namespace.
+
+One important thing, you can add the `show.html.erb` template here to override
+the existing design and content, but if you only want to change the content then
+we have extracted those behavior, all you need to do is add a `_content.html.erb`
+and our engine will automatically grab the content from your partial but keep the
+existing design unaffected. The resources that support `content` are
+
+- Terms - `app/views/impact_travel/terms/_content.html.erb`
+- Refunds - `app/views/impact_travel/refunds/_content.html.erb`
+- Policies - `app/views/impact_travel/policies/_content.html.erb`
+- Privacies - `app/views/impact_travel/privacies/_content.html.erb`
+- Price Guarantee - `app/views/impact_travel/price_guarantees/_content.html.erb`
+- Reservation - `app/views/impact_travel/reservation_guarantees/_content.html.erb`
 
 ## Development
 
