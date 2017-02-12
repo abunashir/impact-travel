@@ -37,4 +37,5 @@ ImpactTravel::Engine.routes.draw do
   resources :policies, :terms, only: :index
   resource :price_guarantee, :cancellation, :privacy, only: :show
   resource :reservation_guarantee, :refund, only: :show
+  resource :instant, as: :instant_provider, only: :show
 end
