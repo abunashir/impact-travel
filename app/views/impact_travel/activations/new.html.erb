@@ -74,10 +74,10 @@
               <address>
                 <strong>Need help ?</strong><br>
                 <i class="fa fa-phone"></i>
-                <a href="tel:+1 (888) 478-1489">+1 (888) 478-1489</a><br />
+                <%= link_to(site_contact, "tel:#{site_contact}") %><br />
 
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:support@cdn.travel">support@cdn.travel</i>
+                <%= link_to(support_email, "mailto:#{support_email}") %>
 
               </address>
           </div>

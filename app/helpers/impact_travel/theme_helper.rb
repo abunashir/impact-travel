@@ -52,6 +52,10 @@ module ImpactTravel
       @site_contact ||= ImpactTravel.configuration.phone
     end
 
+    def support_email
+      @support_email ||= "travel@conciergeservices.io"
+    end
+
     def site_abbreviation
       @site_abbreviation ||= ImpactTravel.configuration.abbreviation
     end
