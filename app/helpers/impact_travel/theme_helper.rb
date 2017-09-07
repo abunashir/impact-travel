@@ -60,6 +60,14 @@ module ImpactTravel
       @site_abbreviation ||= ImpactTravel.configuration.abbreviation
     end
 
+    def site_country
+      @site_country ||= ImpactTravel.configuration.country
+    end
+
+    def site_address
+      @site_address ||= ImpactTravel.configuration.address
+    end
+
     def home_slides
       @home_slides ||= ImpactTravel.configuration.slides
     end

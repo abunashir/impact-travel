@@ -74,7 +74,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    countries (2.1.1)
+    countries (2.1.2)
       i18n_data (~> 0.8.0)
       money (~> 6.9)
       sixarm_ruby_unaccent (~> 1.1)
@@ -191,7 +191,7 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
-    sixarm_ruby_unaccent (1.1.2)
+    sixarm_ruby_unaccent (1.2.0)
     sort_alphabetical (1.1.0)
       unicode_utils (>= 1.2.2)
     sprockets (3.7.1)

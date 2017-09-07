@@ -3,6 +3,7 @@ module ImpactTravel
     attr_accessor :api_key, :logo, :logo_inverse, :title, :abbreviation
     attr_accessor :stylesheet, :keywords, :description, :author, :phone
     attr_accessor :domain, :facebook, :twitter, :instagram, :slides
+    attr_accessor :country, :address
 
     def initialize
       @domain ||= "discountnetwork.io"

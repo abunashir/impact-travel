@@ -4,6 +4,8 @@ ImpactTravel.configure do |config|
   config.title = "Discount Network"
   config.phone = "+1 888 123 456 7890"
   config.abbreviation = "DN"
+  config.country = "United States"
+  config.address = "123, Mountain View, CA, USA"
 
   config.stylesheet = "custom.style"
   config.keywords = "Travel, Leisure, Discount, Tours, Cruises"

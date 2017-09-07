@@ -48,6 +48,8 @@ ImpactTravel.configure do |config|
   config.title = "Application Name / Title"
   config.abbreviation = "Application abbreviation"
   config.phone = "Contact Number for the app"
+  config.country = "The Country"
+  config.address = "Company registered address"
   config.stylesheet = "custom.stylesheet"
   config.slides = ["slide-1.jpg", "slide-2.jpg"]
 
@@ -97,10 +99,9 @@ existing design unaffected. The resources that support `content` are
 ## Development
 
 We are following Sandi Metz's Rules for this application, you can read the
-[description of the rules here]
-(http://robots.thoughtbot.com/post/50655960596/sandi-metz-rules-for-developers). All new code should follow these rules. If you make changes in a pre-existing
-file that violates these rules you should fix the violations as part of
-your contribution.
+[description of the rules here][sandi-metz]. All new code should follow these
+rules. If you make changes in a pre-existing file that violates these rules you
+should fix the violations as part of your contribution.
 
 ### Setup
 
@@ -133,15 +134,17 @@ Here are a few technical guidelines to follow:
 1. [Squash your commits][squash] after receiving feedback.
 1. Party!
 
-[issues]: https://github.com/abunashir/impact-travel/issues
-[squash]: https://github.com/thoughtbot/guides/tree/master/protocol/git#write-a-feature
-
 ## Credits
 
 <img src="https://www.impactservices.io/images/logo-impact-services.png" width="266" alt="Impact Services Co. Ltd.">
 
 This application is developed, maintained and funded by [Impact Services Co.
-Ltd.] (https://www.impactservices.co.th)
+Ltd.][impactservices]
 
-Thank you to all [the contributors]
-(https://github.com/abunashir/impact-travel/graphs/contributors)
+Thank you to all [the contributors][contributors].
+
+[issues]: https://github.com/abunashir/impact-travel/issues
+[squash]: https://github.com/thoughtbot/guides/tree/master/protocol/git#write-a-feature
+[sandi-metz]: http://robots.thoughtbot.com/post/50655960596/sandi-metz-rules-for-developers
+[contributors]: https://github.com/abunashir/impact-travel/graphs/contributors
+[impactservices]: https://www.impactservices.co.th

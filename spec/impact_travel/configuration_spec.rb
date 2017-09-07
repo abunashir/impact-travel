@@ -18,6 +18,8 @@ describe ImpactTravel::Configuration do
       site_abbreviation = "IT"
       site_logo = "logo.png"
       site_contact = "+1 123 456 789 1023"
+      site_country = "United States"
+      site_address = "123, New York, USA"
 
       site_keywords = "travel, discount"
       site_description = "Travel the world in cheapest price"
@@ -33,6 +35,8 @@ describe ImpactTravel::Configuration do
         config.description = site_description
         config.author = site_author
         config.phone = site_contact
+        config.country = site_country
+        config.address =site_address
         config.stylesheet = site_stylesheet
       end
 
@@ -43,6 +47,8 @@ describe ImpactTravel::Configuration do
       expect(configuration.title).to eq(site_title)
       expect(configuration.phone).to eq(site_contact)
       expect(configuration.author).to eq(site_author)
+      expect(configuration.country).to eq(site_country)
+      expect(configuration.address).to eq(site_address)
       expect(configuration.keywords).to eq(site_keywords)
       expect(configuration.stylesheet).to eq(site_stylesheet)
       expect(configuration.description).to eq(site_description)
