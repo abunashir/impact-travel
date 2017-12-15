@@ -3,7 +3,7 @@ module ImpactTravel
     before_action :require_login
 
     def show
-      redirect_to("https://discountnetwork.enjoymydeals.com")
+      redirect_to(root_path)
     end
   end
 end
