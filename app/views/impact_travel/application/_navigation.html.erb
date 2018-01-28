@@ -1,5 +1,4 @@
 <li><%= link_to "HOTELS", hotels_path %></li>
-<li><%= link_to "CONDOS", condos_path  %></li>
 <li><%= link_to "PACKAGES", packages_path %></li>
 <li>
   <%= link_to "OTHER SERVICES", "javascript:void();" %>
@@ -7,6 +6,16 @@
     <li><%= link_to "Cruise", cruises_path %></li>
     <li><%= link_to "Tours", tours_path  %></li>
     <li><%= link_to "Cars", cars_path %></li>
+  </ul>
+</li>
+
+<li>
+  <%= link_to "RESOURCES", "javascript:void();" %>
+  <ul class="drop-down one-column hover-fade">
+    <li><%= link_to "Condos", condos_path %></li>
+    <li><%= link_to "Public Flights", "http://kayak.com/", target: "_blank" %></li>
+    <li><%= link_to "Currency Converter", "http://www.xe.com/currencyconverter/", target: "_blank" %></li>
+    <li><%= link_to "Time Zones / Worldclock", "https://www.timeanddate.com/worldclock/", target: "_blank" %></li>
   </ul>
 </li>
 
