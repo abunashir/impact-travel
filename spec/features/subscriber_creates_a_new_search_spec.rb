@@ -2,6 +2,7 @@ require "spec_helper"
 
 feature "New Search" do
   scenario "subscriber creates a new search" do
+    skip "Pending for migration"
     login_with_valid_credentials
     search = build(:search)
 

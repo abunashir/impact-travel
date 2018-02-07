@@ -7,7 +7,7 @@ feature "Instant booking provider" do
     stub_provider_find_by_slug_api(instant_provider_slug)
     visit impact_travel.instant_provider_path
 
-    expect(current_path).not_to eq(impact_travel.instant_provider_path)
+    expect(current_path).to eq(impact_travel.instant_provider_path)
   end
 
   def instant_provider_slug

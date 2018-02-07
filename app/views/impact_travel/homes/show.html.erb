@@ -9,7 +9,17 @@
       <p class="lead"><%= I18n.t("impact_travel.home.hero_html").html_safe %></p>
     </div>
 
-    <div class="filter-header">
+    <div class="title-header">
+      <%= link_to(
+        I18n.t("impact_travel.home.book_button"),
+        instant_provider_path,
+        target: "_blank",
+        class: "btn btn-primary",
+        style: "padding: 13px 30px"
+      ) %>
+    </div>
+
+    <div class="filter-header" style="display: none">
       <%= simple_form_for @search do |f| %>
         <%= f.input :location_id, as: :hidden %>
         <%= f.input :destination, placeholder: "Where do you want to go?",
@@ -24,6 +34,7 @@
         <%= f.submit "Search" %>
       <% end %>
     </div>
+
   </div>
 </section>
 
