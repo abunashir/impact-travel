@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    impact_travel (0.3.0)
+    impact_travel (0.3.1)
       bootstrap-sass (~> 3.3.7)
       coffee-rails
       country_select

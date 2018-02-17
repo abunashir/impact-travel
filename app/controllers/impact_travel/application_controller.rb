@@ -4,6 +4,8 @@ module ImpactTravel
     before_action :set_locale
     helper_method :logged_in?
 
+    rescue_from(RestClient::Unauthorized, with: :invalidated_user_session)
+
     def require_login
       unless logged_in?
         redirect_to(new_session_path)
@@ -41,6 +43,11 @@ module ImpactTravel
       if logged_in?
         redirect_to(home_path)
       end
+    end
+
+    def invalidated_user_session
+      session[:auth_token] = nil
+      redirect_to(new_session_path, notice: I18n.t("session.expired"))
     end
 
     def set_locale

@@ -3,6 +3,7 @@ en:
     created: "You are logged in successfully!"
     destroyed: "You are logged out successfully!"
     invalid: "Please re-check your login credentials"
+    expired: "Session has been expired, please re-login"
 
   search:
     show:
