@@ -56,7 +56,7 @@
 
     <tr>
       <td>Status</td>
-      <td><%= member.status %></td>
+      <td><%= member.subscription_status.try(:titleize) %></td>
     </tr>
 
   </table>

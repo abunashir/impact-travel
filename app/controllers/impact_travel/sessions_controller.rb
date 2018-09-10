@@ -29,6 +29,7 @@ module ImpactTravel
 
     def destroy_user_sessions
       session[:auth_token] = nil
+      session[:subscription_status] = nil
     end
 
     def login_params

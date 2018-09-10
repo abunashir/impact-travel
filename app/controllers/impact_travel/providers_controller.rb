@@ -1,6 +1,7 @@
 module ImpactTravel
   class ProvidersController < ImpactTravel::ApplicationController
     before_action :require_login
+    before_action :require_an_active_subscripton
 
     def index
       set_page_attributes

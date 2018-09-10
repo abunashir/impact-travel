@@ -14,16 +14,25 @@ module ImpactTravel
 
     def sign_in(user)
       session[:auth_token] = user.token
+      session[:subscription_status] = user.subscription_status
     end
 
     def logged_in?
       user_auth_token.present?
     end
 
+    def active_subscription?
+      user_subscription.try(:downcase) == "active"
+    end
+
     private
 
     def user_auth_token
       @user_auth_token ||= session[:auth_token]
+    end
+
+    def user_subscription
+      @user_subscription ||= session[:subscription_status]
     end
 
     def set_auth_token
@@ -42,6 +51,12 @@ module ImpactTravel
     def redirect_logged_in_subscriber
       if logged_in?
         redirect_to(home_path)
+      end
+    end
+
+    def require_an_active_subscripton
+      unless active_subscription?
+        redirect_to(subscription_path)
       end
     end
 
