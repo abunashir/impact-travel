@@ -62,7 +62,7 @@ describe ImpactTravel::AccountsController do
         sign_in_as_subscriber
         stub_valid_subscriber_account
 
-        put :update, subscriber: attributes_for(:invalid_subscriber)
+        put :update, params: { subscriber: attributes_for(:invalid_subscriber) }
 
         expect(response).to render_template(:edit)
         expect(assigns(:subscriber)).not_to be_nil

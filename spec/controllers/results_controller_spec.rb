@@ -10,7 +10,7 @@ describe ImpactTravel::ResultsController do
         search_id = 123_456_789
 
         stub_search_results_api(search_id: search_id)
-        get :index, search_id: search_id
+        get :index, params: { search_id: search_id }
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:index)
@@ -25,7 +25,7 @@ describe ImpactTravel::ResultsController do
           ["searches", search_id, "results"].join("/"),
         )
 
-        get :index, search_id: search_id
+        get :index, params: { search_id: search_id }
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("search.invalid"))
@@ -42,7 +42,7 @@ describe ImpactTravel::ResultsController do
         }
 
         stub_search_results_api(search_params)
-        get(:index, **search_params)
+        get(:index, params: { **search_params })
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:index)
@@ -59,7 +59,7 @@ describe ImpactTravel::ResultsController do
           search_id: result.search_id, hotel_id: result.hotel_id,
         )
 
-        get(:show, id: result.hotel_id, search_id: result.search_id)
+        get(:show, params: { id: result.hotel_id, search_id: result.search_id })
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:show)
@@ -74,7 +74,7 @@ describe ImpactTravel::ResultsController do
           ["searches", result.search_id, "results", result.hotel_id].join("/"),
         )
 
-        get(:show, id: result.hotel_id, search_id: result.search_id)
+        get(:show, params: { id: result.hotel_id, search_id: result.search_id })
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("search.invalid"))

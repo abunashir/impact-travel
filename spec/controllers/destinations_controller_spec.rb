@@ -8,7 +8,7 @@ describe ImpactTravel::DestinationsController, type: :controller do
       search_term = "bangkok"
 
       stub_destination_list_api(term: search_term)
-      get :index, term: search_term
+      get :index, params: { term: search_term }
       response_body = JSON.parse(response.body)
 
       expect(response_body.first["value"]).to eq(835)

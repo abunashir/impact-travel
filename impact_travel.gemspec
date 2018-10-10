@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
   s.add_dependency "discountnetwork", "~> 0.1.1"
   s.add_dependency "font-awesome-rails"
   s.add_dependency "jquery-rails"
-  s.add_dependency "rails", ">= 4.2.6"
+  s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "sass-rails"
-  s.add_dependency "simple_form", "~> 3.2.1"
+  s.add_dependency "simple_form"
   s.add_dependency "will_paginate", "~> 3.0.6"
 
   s.add_development_dependency "capybara"

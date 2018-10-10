@@ -9,7 +9,7 @@ describe ImpactTravel::ResetsController do
         invalid_email = "john.doe_example.com"
         stub_unprocessable_dn_api_request("account/resets")
 
-        post :create, password_reset: { email: invalid_email }
+        post :create, params: { password_reset: { email: invalid_email } }
 
         expect(response).to redirect_to(new_session_path)
         expect(flash.notice).to eq(I18n.t("password_reset.invalid"))
@@ -22,7 +22,7 @@ describe ImpactTravel::ResetsController do
       invalid_token = "invalid"
       stub_unauthorized_dn_api_reqeust("account/resets/invalid")
 
-      get :show, id: invalid_token
+      get :show, params: { id: invalid_token }
 
       expect(response).to redirect_to(new_session_path)
       expect(flash.notice).to eq(I18n.t("password_reset.invalid_token"))

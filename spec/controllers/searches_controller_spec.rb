@@ -10,7 +10,7 @@ describe ImpactTravel::SearchesController do
         search = build(:search)
 
         stub_search_create_api(search.attributes)
-        post :create, search: attributes_for(:search)
+        post :create, params: { search: attributes_for(:search) }
 
         expect(flash.notice).to eq(I18n.t("search.create.success"))
         expect(response).to redirect_to(search_path(search.search_id))
@@ -22,7 +22,11 @@ describe ImpactTravel::SearchesController do
         sign_in_as_subscriber
 
         stub_unprocessable_dn_api_request("searches")
-        post(:create, search: attributes_for(:search, location_id: nil))
+
+        post(
+          :create,
+          params: { search: attributes_for(:search, location_id: nil) },
+        )
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("search.create.errors"))
@@ -37,7 +41,7 @@ describe ImpactTravel::SearchesController do
         search = build(:search)
 
         stub_search_find_api(search.search_id)
-        get :show, id: search.search_id
+        get :show, params: { id: search.search_id }
 
         expect(response.status).to eq(200)
         expect(response).to render_template(layout: "impact_travel/loading")
@@ -52,7 +56,7 @@ describe ImpactTravel::SearchesController do
           ["searches", search_id].join("/"),
         )
 
-        get :show, id: search_id
+        get :show, params: { id: search_id }
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("search.show.error"))

@@ -10,7 +10,7 @@ describe ImpactTravel::BookingsController do
         booking_id = 123_456_789
 
         stub_booking_find_api(booking_id)
-        get :show, id: booking_id
+        get :show, params: { id: booking_id }
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:show)
@@ -23,7 +23,7 @@ describe ImpactTravel::BookingsController do
         booking_id = "invalid"
 
         stub_unprocessable_dn_api_request(["bookings", booking_id].join("/"))
-        get :show, id: booking_id
+        get :show, params: { id: booking_id }
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("booking.invalid"))
@@ -39,7 +39,7 @@ describe ImpactTravel::BookingsController do
           search_id: search_id, hotel_id: result_id,
         )
 
-        get :new, search_id: search_id, result_id: result_id
+        get :new, params: { search_id: search_id, result_id: result_id }
 
         expect(response.status).to eq(200)
         expect(response).to render_template(:new)
@@ -54,7 +54,7 @@ describe ImpactTravel::BookingsController do
           ["searches", search_id, "results", result_id].join("/"),
         )
 
-        get :new, search_id: search_id, result_id: result_id
+        get :new, params: { search_id: search_id, result_id: result_id }
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("search.invalid"))
@@ -73,9 +73,11 @@ describe ImpactTravel::BookingsController do
 
         post(
           :create,
-          search_id: search_id,
-          result_id: result_id,
-          booking: attributes_for(:booking),
+          params: {
+            search_id: search_id,
+            result_id: result_id,
+            booking: attributes_for(:booking),
+          },
         )
 
         expect(response).to redirect_to(booking_path("123456789"))
@@ -88,15 +90,17 @@ describe ImpactTravel::BookingsController do
         sign_in_as_subscriber
         post(
           :create,
-          search_id: search_id,
-          result_id: result_id,
-          booking: attributes_for(
-            :booking,
-            first_name: nil,
-            last_name: nil,
-            phone: nil,
-            address: nil,
-          ),
+          params: {
+            search_id: search_id,
+            result_id: result_id,
+            booking: attributes_for(
+              :booking,
+              first_name: nil,
+              last_name: nil,
+              phone: nil,
+              address: nil,
+            ),
+          },
         )
 
         expect(response.status).to eq(200)

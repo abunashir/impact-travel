@@ -8,7 +8,7 @@ describe ImpactTravel::SessionsController do
       it "logged the subscriber in" do
         subscriber = build(:login)
         stub_session_create_api(subscriber.attributes)
-        post :create, login: login_params(subscriber)
+        post :create, params: { login: login_params(subscriber) }
 
         expect(response).to redirect_to(home_path)
         expect(flash.notice).to eq(I18n.t("session.created"))
@@ -18,7 +18,7 @@ describe ImpactTravel::SessionsController do
     context "subscriber provides invalid credentials" do
       it "re render the login page" do
         subscriber = build(:login, name: nil)
-        post :create, login: login_params(subscriber)
+        post :create, params: { login: login_params(subscriber) }
 
         expect(response).to redirect_to(new_session_path)
         expect(flash.notice).to eq(I18n.t("session.invalid"))

@@ -11,7 +11,7 @@ describe ImpactTravel::SupplementariesController do
           :supplementary, first_name: nil, email: nil
         )
 
-        post :create, supplementary: supplementary_attributes
+        post :create, params: { supplementary: supplementary_attributes }
 
         expect(response).to render_template(:new)
         expect(flash.now[:error]).to eq(I18n.t("supplementary.invalid"))

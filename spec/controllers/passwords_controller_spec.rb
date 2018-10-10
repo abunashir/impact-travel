@@ -18,7 +18,7 @@ describe ImpactTravel::PasswordsController do
     context "with invalid data" do
       it "re renders the new password form" do
         password = build(:password, password: "inv")
-        post :create, password: password.attributes
+        post :create, params: { password: password.attributes }
 
         expect(response).to render_template(:new)
         expect(flash.now[:error]).to eq(I18n.t("password.invalid"))
@@ -33,7 +33,7 @@ describe ImpactTravel::PasswordsController do
         set_account_auth_token
         password = build(:password, password: "invalid")
 
-        patch :update, password: password.attributes
+        patch :update, params: { password: password.attributes }
 
         expect(assigns(:password)).not_to be_nil
         expect(response).to render_template(:edit)

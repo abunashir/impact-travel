@@ -5,11 +5,13 @@
 
     <ul class="collapse">
       <li class="title">
-        <%= link_to(image_tag(site_logo, class: "navbar_logo"), home_path) %>
-        <%= link_to(
+        <% unless site_logo.blank? %>
+          <%= link_to(image_tag(site_logo, class: "navbar_logo"), home_path) %>
+          <%= link_to(
             image_tag(site_sticky_logo, class: "navbar_logo logo_sticky"),
             home_path
           ) %>
+        <% end %>
       </li>
 
     <%= render "navigation" %>

@@ -23,7 +23,11 @@ describe ImpactTravel::ActivationsController do
       it "re renders the activaton form" do
         token = "ABCD_123"
         session[:activation_token] = token
-        post :create, subscriber: attributes_for(:invalid_subscriber)
+
+        post(
+          :create,
+          params: { subscriber: attributes_for(:invalid_subscriber) },
+        )
 
         expect(response).to render_template(:new)
         expect(assigns[:subscriber]).not_to be_nil
