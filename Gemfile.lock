@@ -5,7 +5,7 @@ PATH
       bootstrap-sass (~> 3.3.7)
       coffee-rails
       country_select
-      discountnetwork (~> 0.1.1)
+      discountnetwork (~> 0.1.2)
       font-awesome-rails
       jquery-rails
       rails (>= 5.0.0)
@@ -88,8 +88,8 @@ GEM
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
     diff-lcs (1.2.5)
-    discountnetwork (0.1.1)
-      rest-client (~> 1.8)
+    discountnetwork (0.1.2)
+      rest-client (~> 2.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -114,7 +114,7 @@ GEM
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
     mime-types (2.99.2)
@@ -161,10 +161,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rest-client (1.8.0)
+    rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.5.1)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)

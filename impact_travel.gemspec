@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap-sass", "~> 3.3.7"
   s.add_dependency "coffee-rails"
   s.add_dependency "country_select"
-  s.add_dependency "discountnetwork", "~> 0.1.1"
+  s.add_dependency "discountnetwork", "~> 0.1.2"
   s.add_dependency "font-awesome-rails"
   s.add_dependency "jquery-rails"
   s.add_dependency "rails", ">= 5.0.0"
