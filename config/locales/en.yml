@@ -33,6 +33,11 @@ en:
     updated: "You changes has been saved successfully!"
     activated: "Your account has been activated!"
 
+    create:
+      success:
+        "Account has been created! Please check your inbox for
+        activation email"
+
   activation:
     invalid: "Please provide all the required fields to activate your account"
 

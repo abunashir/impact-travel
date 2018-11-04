@@ -14,6 +14,12 @@ module ImpactTravel
       end
     end
 
+    def register
+      if valid?
+        @response = DiscountNetwork::Account.create(attributes)
+      end
+    end
+
     def activate
       if token && valid?
         @response = DiscountNetwork::Activation.activate(token, attributes)

@@ -38,6 +38,7 @@ describe ImpactTravel::Configuration do
         config.country = site_country
         config.address =site_address
         config.stylesheet = site_stylesheet
+        config.allow_signup = true
       end
 
       configuration = ImpactTravel.configuration
@@ -53,6 +54,7 @@ describe ImpactTravel::Configuration do
       expect(configuration.stylesheet).to eq(site_stylesheet)
       expect(configuration.description).to eq(site_description)
       expect(configuration.abbreviation).to eq(site_abbreviation)
+      expect(configuration.allow_signup).to be_truthy
     end
   end
 

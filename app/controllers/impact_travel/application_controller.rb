@@ -12,6 +12,12 @@ module ImpactTravel
       end
     end
 
+    def allow_signup
+      unless allow_signup?
+        redirect_to(new_session_path)
+      end
+    end
+
     def sign_in(user)
       session[:auth_token] = user.token
       session[:subscription_status] = user.subscription_status
@@ -37,6 +43,10 @@ module ImpactTravel
 
     def set_auth_token
       DiscountNetwork.configuration.auth_token = user_auth_token
+    end
+
+    def allow_signup?
+      ImpactTravel.configuration.allow_signup === true
     end
 
     def set_app_session(key, value)

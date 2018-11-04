@@ -1,7 +1,18 @@
 module ImpactTravel
   class AccountsController < ImpactTravel::ApplicationController
-    before_action :require_login
-    before_action :set_auth_token
+    before_action :allow_signup, only: [:new, :create]
+    before_action :require_login, except: [:new, :create]
+    before_action :set_auth_token, except: [:new, :create]
+
+    def new
+      new_subscriber
+    end
+
+    def create
+      create_account || render_with_error(
+        :new, message: I18n.t("account.create.error")
+      )
+    end
 
     def show
       find_subscriber || redirect_to_sign_in_path
@@ -37,6 +48,12 @@ module ImpactTravel
       end
     end
 
+    def create_account
+      if new_subscriber.register
+        redirect_to_sign_in_path(I18n.t("account.create.success"))
+      end
+    end
+
     def update_account
       if new_subscriber.save
         redirect_to(account_path, notice: I18n.t("account.updated"))
@@ -47,9 +64,9 @@ module ImpactTravel
       @subscriber = ImpactTravel::Subscriber.new(account_params)
     end
 
-    def redirect_to_sign_in_path
+    def redirect_to_sign_in_path(message = I18n.t("account.invalid"))
       destroy_user_sessions
-      redirect_to(new_session_path, notice: I18n.t("account.invalid"))
+      redirect_to(new_session_path, notice: message)
     end
 
     def destroy_user_sessions
@@ -58,11 +75,12 @@ module ImpactTravel
     end
 
     def account_params
-      params.require(:subscriber).permit(
+      account_params = params[:subscriber]
+      account_params ? account_params.permit(
         :first_name, :middle_name, :last_name, :spouse_name, :sex,
         :email, :phone, :mobile, :office_phone, :address, :city, :state,
         :zip, :country, :username, :password, :password_confirmation
-      )
+      ) : {}
     end
   end
 end
