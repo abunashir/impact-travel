@@ -20,6 +20,11 @@ module ImpactTravel
           attributes.merge(package_id: default_package_id),
         )
       end
+
+    rescue RestClient::UnprocessableEntity
+      self.errors.add(:email, "has already been taken")
+      self.errors.add(:username, "has already been taken")
+      nil
     end
 
     def activate
