@@ -71,6 +71,7 @@ feature "Account creation" do
       username: "john.doe",
       password: "secret_password",
       password_confirmation: "secret_password",
+      package_id: nil,
     )
   end
 end

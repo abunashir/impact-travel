@@ -6,7 +6,7 @@ module ImpactTravel
     attr_accessor :password_confirmation, :status, :name, :token
 
     validates :first_name, :last_name, :email, :mobile, :address, presence: true
-    validates :city, :state, :zip, :country, presence: true
+    validates :phone, :city, :state, :zip, :country, presence: true
 
     def save
       if valid?
@@ -16,7 +16,9 @@ module ImpactTravel
 
     def register
       if valid?
-        @response = DiscountNetwork::Account.create(attributes)
+        @response = DiscountNetwork::Account.create(
+          attributes.merge(package_id: default_package_id),
+        )
       end
     end
 
@@ -46,6 +48,12 @@ module ImpactTravel
         password: password,
         password_confirmation: password_confirmation,
       }.compact
+    end
+
+    private
+
+    def default_package_id
+      ImpactTravel.configuration.default_package_id
     end
   end
 end
