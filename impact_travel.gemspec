@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = `git ls-files -- {spec}/*`.split("\n")
 
-  s.add_dependency "bootstrap-sass", "~> 3.3.7"
+  s.add_dependency "bootstrap-sass", ">= 3.3.7", "< 3.5.0"
   s.add_dependency "coffee-rails"
   s.add_dependency "country_select"
   s.add_dependency "discountnetwork", "~> 0.1.3"
