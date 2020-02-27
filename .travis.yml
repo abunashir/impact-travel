@@ -2,7 +2,7 @@ cache: bundler
 
 language: ruby
 rvm:
-  - 2.3.0
+  - 2.6.3
 
 install:
   - "bin/setup"
